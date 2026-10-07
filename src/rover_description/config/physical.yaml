@@ -1,0 +1,45 @@
+# SI units. Wheel diameter/axle spacing confirmed by supplied Fusion screenshot.
+# Masses, COM, friction, damping and motor limits are PROVISIONAL, not CAD data.
+wheel_radius: 0.150
+wheel_width: 0.165
+wheel_track: 0.815
+axle_spacing: 0.500
+wheel_mass: 2.0
+# IRC 2026 caps every deployed mission configuration at 65 kg.  Reserving 8 kg
+# for the arm therefore leaves 57 kg for the complete mobile base, including
+# wheels, suspension, LiDAR and IMU.  Xacro derives the remaining base_link
+# mass from this total so components are counted exactly once.
+rover_without_arm_mass: 57.0
+# Provisional distribution of the requested 8 kg arm.  Base + arm = 65 kg.
+arm_yaw_mass: 1.5
+arm_lift_mass: 6.5
+arm_yaw_lower: -0.90
+arm_yaw_upper: 0.90
+arm_lift_lower: -0.20
+arm_lift_upper: 0.55
+lidar_mass: 0.3
+imu_mass: 0.05
+max_linear_velocity: 0.6
+max_angular_velocity: 0.8
+max_linear_acceleration: 0.4
+max_angular_acceleration: 1.2
+chassis_com_x: 0.0
+chassis_com_y: 0.0
+chassis_com_z: 0.28
+# Equivalent box for chassis inertia, NOT its complete visual shape.
+inertia_length: 0.60
+inertia_width: 0.62
+inertia_height: 0.25
+joint_effort: 30.0  # Legacy velocity-drive fallback only; default cap is in electrical.yaml.
+joint_velocity: 12.0
+joint_damping: 0.1
+joint_friction: 0.05
+contact_mu: 0.8
+contact_mu2: 0.8
+# Virtual sensor locations relative to base_link. Confirm actual mounts.
+lidar_x: 0.0
+lidar_y: 0.0
+lidar_z: 0.95
+imu_x: 0.0
+imu_y: 0.0
+imu_z: 0.28

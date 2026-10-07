@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Passive reverse rocker-bogie: paired wheels forward, single rear. -->
+  <xacro:macro name="suspension_link" params="name">
+    <xacro:property name="data" value="${s['links'][name]}"/>
+    <xacro:property name="ii" value="${data['inertia']}"/>
+    <link name="${name}_link">
+      <visual><geometry><mesh filename="package://rover_description/meshes/${name}.stl"/></geometry><material name="chassis_grey"/></visual>
+      <xacro:if value="${'rocker' in name}">
+        <xacro:strut name="rear_tube" ax="0" az="0" bx="${s['rear_x']}" bz="${s['wheel_z']}" radius="0.018"/>
+        <xacro:strut name="bogie_holder" ax="0" az="0" bx="${s['bogie_x']}" bz="${s['bogie_z']}" radius="0.022"/>
+      </xacro:if>
+      <xacro:unless value="${'rocker' in name}">
+        <xacro:strut name="front_tube" ax="0" az="0" bx="${s['front_x']-s['bogie_x']}" bz="${s['wheel_z']-s['bogie_z']}" radius="0.018"/>
+        <xacro:strut name="middle_tube" ax="0" az="0" bx="${s['middle_x']-s['bogie_x']}" bz="${s['wheel_z']-s['bogie_z']}" radius="0.018"/>
+      </xacro:unless>
+      <inertial><origin xyz="${data['com'][0]} ${data['com'][1]} ${data['com'][2]}"/>
+        <mass value="${data['mass']}"/>
+        <inertia ixx="${ii[0]}" ixy="${ii[1]}" ixz="${ii[2]}" iyy="${ii[3]}" iyz="${ii[4]}" izz="${ii[5]}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+  <!-- Rounded strut collision, independently attached to each moving link. -->
+  <xacro:macro name="strut" params="name ax az bx bz radius">
+    <collision name="${name}">
+      <origin xyz="${(ax+bx)/2} 0 ${(az+bz)/2}" rpy="0 ${atan2(bx-ax,bz-az)} 0"/>
+      <geometry><cylinder radius="${radius}" length="${sqrt((bx-ax)**2+(bz-az)**2)}"/></geometry>
+    </collision>
+  </xacro:macro>
+  <xacro:macro name="suspension_side" params="side sign">
+    <xacro:suspension_link name="${side}_rocker"/>
+    <xacro:suspension_link name="${side}_bogie"/>
+    <joint name="${side}_rocker_joint" type="revolute">
+      <parent link="base_link"/><child link="${side}_rocker_link"/>
+      <origin xyz="${s['rocker_x']} ${sign*s['rocker_y']} ${s['rocker_z']}"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-s['rocker_limit']}" upper="${s['rocker_limit']}" effort="300" velocity="3"/>
+      <dynamics damping="${s['joint_damping']}" friction="${s['joint_friction']}"/>
+    </joint>
+    <joint name="${side}_bogie_joint" type="revolute">
+      <parent link="${side}_rocker_link"/><child link="${side}_bogie_link"/>
+      <origin xyz="${s['bogie_x']} 0 ${s['bogie_z']}"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-s['bogie_limit']}" upper="${s['bogie_limit']}" effort="150" velocity="3"/>
+      <dynamics damping="${s['joint_damping']}" friction="${s['joint_friction']}"/>
+    </joint>
+    <xacro:wheel position="front" side="${side}" x="${s['front_x']-s['bogie_x']}" sign="${sign}"
+      parent="${side}_bogie_link" y="${sign*(p['wheel_track']/2-s['rocker_y'])}" z="${s['wheel_z']-s['bogie_z']}" mass="${s['wheel_mass']}"/>
+    <xacro:wheel position="middle" side="${side}" x="${s['middle_x']-s['bogie_x']}" sign="${sign}"
+      parent="${side}_bogie_link" y="${sign*(p['wheel_track']/2-s['rocker_y'])}" z="${s['wheel_z']-s['bogie_z']}" mass="${s['wheel_mass']}"/>
+    <xacro:wheel position="rear" side="${side}" x="${s['rear_x']}" sign="${sign}"
+      parent="${side}_rocker_link" y="${sign*(p['wheel_track']/2-s['rocker_y'])}" z="${s['wheel_z']}" mass="${s['wheel_mass']}"/>
+  </xacro:macro>
+  <xacro:suspension_side side="left" sign="1"/>
+  <xacro:suspension_side side="right" sign="-1"/>
+  <xacro:if value="$(arg simulation)">
+    <gazebo><plugin filename="librover_differential.so" name="rover_simulation::Differential">
+      <left_joint>left_rocker_joint</left_joint><right_joint>right_rocker_joint</right_joint>
+      <stiffness>${s['differential_stiffness']}</stiffness>
+      <damping>${s['differential_damping']}</damping>
+      <max_torque>${s['differential_max_torque']}</max_torque>
+    </plugin></gazebo>
+  </xacro:if>
+</robot>

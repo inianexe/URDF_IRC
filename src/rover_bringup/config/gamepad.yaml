@@ -1,0 +1,26 @@
+# For joy/game_controller_node's SDL ordering, not joy_node's vendor-dependent ordering.
+# SDL driver outputs left/up positive; triggers are 0 released, -1 pressed.
+gamepad_teleop:
+  ros__parameters:
+    steer_axis: 2
+    arm_yaw_axis: 0
+    arm_lift_axis: 1
+    reverse_axis: 4
+    forward_axis: 5
+    trigger_rest: 0.0
+    trigger_pressed: -1.0
+    stop_button: 1   # Circle / B: stop, then release all controls to re-arm.
+    deadzone: 0.08
+    max_forward_speed: 0.6
+    max_reverse_speed: 0.35
+    max_yaw_rate: 0.8
+    acceleration: 0.4
+    angular_acceleration: 1.2
+    # The DualSense stream is normally 10-20 Hz. This tolerates short Gazebo
+    # scheduling stalls while still stopping within one second on disconnect.
+    joy_timeout: 0.75
+    arm_speed: 0.3
+    arm_yaw_lower: -0.90
+    arm_yaw_upper: 0.90
+    arm_lift_lower: -0.20
+    arm_lift_upper: 0.55

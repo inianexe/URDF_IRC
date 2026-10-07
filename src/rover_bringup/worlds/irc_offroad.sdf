@@ -1,0 +1,5175 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="irc_offroad">
+    <gravity>0 0 -9.81</gravity>
+    <physics name="default" type="ignored">
+      <max_step_size>.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <scene>
+      <ambient>.60 .57 .51 1</ambient>
+      <background>.65 .76 .86 1</background>
+    </scene>
+    <light name="sun" type="directional">
+      <pose>0 0 20 0 0 0</pose>
+      <direction>-.6 .3 -.8</direction>
+      <diffuse>.95 .88 .73 1</diffuse>
+      <cast_shadows>true</cast_shadows>
+    </light>
+    <model name="earth">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_ground.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.82</mu>
+                <mu2>0.82</mu2>
+                <slip1>0.008</slip1>
+                <slip2>0.008</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_ground.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.48 .34 .20 1</ambient>
+            <diffuse>.48 .34 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="hardpack_start">
+      <static>true</static>
+      <pose>-14.0 -10.5 -0.02 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6.0 5.0 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.1</mu>
+                <mu2>1.1</mu2>
+                <slip1>0.002</slip1>
+                <slip2>0.002</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6.0 5.0 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.49 .34 .20 1</ambient>
+            <diffuse>.49 .34 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="gravel_delivery">
+      <static>true</static>
+      <pose>0.0 -10.0 -0.02 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.58</mu>
+                <mu2>0.58</mu2>
+                <slip1>0.035</slip1>
+                <slip2>0.035</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.39 .37 .33 1</ambient>
+            <diffuse>.39 .37 .33 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="loose_soil_abex">
+      <static>true</static>
+      <pose>-10.0 2.0 -0.02 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>7.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.38</mu>
+                <mu2>0.38</mu2>
+                <slip1>0.08</slip1>
+                <slip2>0.08</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>7.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.55 .40 .27 1</ambient>
+            <diffuse>.55 .40 .27 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="servicing_pad">
+      <static>true</static>
+      <pose>-11.5 9.5 -0.02 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>7.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>
+                <mu2>1.0</mu2>
+                <slip1>0.003</slip1>
+                <slip2>0.003</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>7.0 4.0 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.46 .39 .29 1</ambient>
+            <diffuse>.46 .39 .29 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_000">
+      <static>true</static>
+      <pose>-4.62230077598017 -1.4653926528465782 0.22722315407314556 0 0 -2.3272742676196843</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.037628085005495304 0.04200169474762839 0.04207523079645742</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.037628085005495304 0.04200169474762839 0.04207523079645742</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.36058619289168664 0.33173929746035175 0.2812572304555156 1</ambient>
+            <diffuse>0.36058619289168664 0.33173929746035175 0.2812572304555156 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_001">
+      <static>true</static>
+      <pose>-7.140925624783041 2.9766901948840943 0.0199563424875856 0 0 -2.5695029702910945</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.024199178088473022 0.02411518368327192 0.02771714234386889</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.024199178088473022 0.02411518368327192 0.02771714234386889</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4108201860715808 0.37795457118585435 0.320439745135833 1</ambient>
+            <diffuse>0.4108201860715808 0.37795457118585435 0.320439745135833 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_002">
+      <static>true</static>
+      <pose>3.975472423082362 -5.796728161809195 -0.01803598031338856 0 0 -2.2916443681967413</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.04134643372680147 0.03714279841974963 0.02240342084866702</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.04134643372680147 0.03714279841974963 0.02240342084866702</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3816700742953961 0.35113646835176443 0.297702657950409 1</ambient>
+            <diffuse>0.3816700742953961 0.35113646835176443 0.297702657950409 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_003">
+      <static>true</static>
+      <pose>-15.171251504651515 2.682657248349976 0.019703056677324277 0 0 0.7464326525087674</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.04542769930931883 0.04527832316441456 0.03216311160095133</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.04542769930931883 0.04527832316441456 0.03216311160095133</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.49827979987181203 0.4584174158820671 0.3886582439000134 1</ambient>
+            <diffuse>0.49827979987181203 0.4584174158820671 0.3886582439000134 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_004">
+      <static>true</static>
+      <pose>-15.020253174252284 4.781725389553003 0.013976862362631954 0 0 -2.048689806180099</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.039810871938016544 0.04729308447413895 0.034688185494519456</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.039810871938016544 0.04729308447413895 0.034688185494519456</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3348267855919531 0.30804064274459686 0.26116489276172344 1</ambient>
+            <diffuse>0.3348267855919531 0.30804064274459686 0.26116489276172344 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_005">
+      <static>true</static>
+      <pose>11.070014510729045 4.077116686178702 -0.11052038717919066 0 0 2.2838182491668757</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.04204176670806259 0.03778232683829583 0.03687634460733284</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.04204176670806259 0.03778232683829583 0.03687634460733284</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3128323157148815 0.28780573045769103 0.24400920625760758 1</ambient>
+            <diffuse>0.3128323157148815 0.28780573045769103 0.24400920625760758 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_006">
+      <static>true</static>
+      <pose>6.044661357173027 -6.971688632977482 0.02547219545474956 0 0 -0.21729823540996618</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.026308608567723723 0.025455628557547554 0.03050957423659528</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.026308608567723723 0.025455628557547554 0.03050957423659528</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.29110398966322937 0.267815670490171 0.22706111193731893 1</ambient>
+            <diffuse>0.29110398966322937 0.267815670490171 0.22706111193731893 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_007">
+      <static>true</static>
+      <pose>-14.357368199314953 -3.119529491787743 0.018209482326175523 0 0 -1.378769057969742</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.031493459762626894 0.043350776015075726 0.024980270757661766</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.031493459762626894 0.043350776015075726 0.024980270757661766</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.405054609688125 0.372650240913075 0.31594259555673754 1</ambient>
+            <diffuse>0.405054609688125 0.372650240913075 0.31594259555673754 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_008">
+      <static>true</static>
+      <pose>-4.8354761259397545 -0.002857495500954599 0.02077535235264144 0 0 1.5155967968557515</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.04647945101441443 0.0340307522474863 0.03358844958768076</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.04647945101441443 0.0340307522474863 0.03358844958768076</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3104118137956949 0.2855788686920393 0.24212121476064202 1</ambient>
+            <diffuse>0.3104118137956949 0.2855788686920393 0.24212121476064202 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_009">
+      <static>true</static>
+      <pose>15.711210291242423 10.95665235104967 0.02637847842425282 0 0 -1.76529088177099</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.04069198035070733 0.03362636525213094 0.03914584112595298</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.04069198035070733 0.03362636525213094 0.03914584112595298</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4964726237437243 0.4567548138442264 0.387248646520105 1</ambient>
+            <diffuse>0.4964726237437243 0.4567548138442264 0.387248646520105 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_010">
+      <static>true</static>
+      <pose>-2.502596521930089 3.5729560107461573 0.3433722824163319 0 0 0.10541313595586033</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.0281989078465955 0.029339763692340974 0.01815794054244954</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.0281989078465955 0.029339763692340974 0.01815794054244954</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.32517083251405154 0.29915716591292746 0.2536332493609602 1</ambient>
+            <diffuse>0.32517083251405154 0.29915716591292746 0.2536332493609602 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_011">
+      <static>true</static>
+      <pose>3.70881476142112 -1.2365267745559017 -0.23563377672831587 0 0 1.171468261721735</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0353466629530335 0.031008223401045497 0.032449059604834865</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0353466629530335 0.031008223401045497 0.032449059604834865</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.397253794134456 0.36547349060369955 0.3098579594248757 1</ambient>
+            <diffuse>0.397253794134456 0.36547349060369955 0.3098579594248757 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_012">
+      <static>true</static>
+      <pose>11.903364245932163 -2.742932508008355 0.019267400438440226 0 0 3.053156511330598</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.042402563556172695 0.03530688893473677 0.03994692647100951</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.042402563556172695 0.03530688893473677 0.03994692647100951</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.33377944951112937 0.30707709355023904 0.2603479706186809 1</ambient>
+            <diffuse>0.33377944951112937 0.30707709355023904 0.2603479706186809 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_013">
+      <static>true</static>
+      <pose>6.057667414465808 -11.060796756966443 0.004503244798065964 0 0 -1.3814804511389356</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.02257541094121259 0.02458603041890332 0.01820525799467564</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.02257541094121259 0.02458603041890332 0.01820525799467564</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.30823439629734245 0.28357564459355505 0.2404228291119271 1</ambient>
+            <diffuse>0.30823439629734245 0.28357564459355505 0.2404228291119271 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_014">
+      <static>true</static>
+      <pose>-3.8350202607366803 7.181696969066671 0.042002684513077725 0 0 1.7225053748055092</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.031075229343974817 0.028789616655261148 0.020946378404281235</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.031075229343974817 0.028789616655261148 0.020946378404281235</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4764119333252788 0.43829897865925654 0.3716013079937175 1</ambient>
+            <diffuse>0.4764119333252788 0.43829897865925654 0.3716013079937175 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_015">
+      <static>true</static>
+      <pose>-3.6728392983146296 1.2840724710774847 0.08861035415077846 0 0 2.3303897968724563</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.03909941049755414 0.035925944449064925 0.030061217859730885</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.03909941049755414 0.035925944449064925 0.030061217859730885</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3123992222129532 0.28740728443591695 0.2436713933261035 1</ambient>
+            <diffuse>0.3123992222129532 0.28740728443591695 0.2436713933261035 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_016">
+      <static>true</static>
+      <pose>13.911237725636763 3.5329820127926723 0.010937444783473055 0 0 -2.020471420911177</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.03977022425580199 0.034288276648619075 0.04023480149342168</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.03977022425580199 0.034288276648619075 0.04023480149342168</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4032514235828934 0.37099130969626193 0.31453611039465684 1</ambient>
+            <diffuse>0.4032514235828934 0.37099130969626193 0.31453611039465684 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_017">
+      <static>true</static>
+      <pose>3.215711304228453 -9.864632748389607 0.01362280981220803 0 0 0.03970072713473494</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.028612581573546923 0.02017169848825437 0.018920569183622265</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.028612581573546923 0.02017169848825437 0.018920569183622265</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.42521886268724957 0.3912013536722696 0.33167071289605465 1</ambient>
+            <diffuse>0.42521886268724957 0.3912013536722696 0.33167071289605465 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_018">
+      <static>true</static>
+      <pose>-8.439989269445382 -9.034545582418305 0.01359396338927896 0 0 -0.0698059074897337</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.03713655537652072 0.03108379028631938 0.024243084627131557</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.03713655537652072 0.03108379028631938 0.024243084627131557</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3252371903376657 0.29921821511065244 0.2536850084633792 1</ambient>
+            <diffuse>0.3252371903376657 0.29921821511065244 0.2536850084633792 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_019">
+      <static>true</static>
+      <pose>-7.19564317401707 7.905768489250011 0.0383389159459674 0 0 1.7265113925137268</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0241704590843472 0.034317475608740676 0.021164336731608648</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0241704590843472 0.034317475608740676 0.021164336731608648</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.48928776083381753 0.45014473996711213 0.3816444534503777 1</ambient>
+            <diffuse>0.48928776083381753 0.45014473996711213 0.3816444534503777 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_020">
+      <static>true</static>
+      <pose>8.008273576535519 6.664311232859763 0.638276212803997 0 0 1.5114018692163977</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.0358013478295767 0.034617245422366924 0.02263431547071027</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.0358013478295767 0.034617245422366924 0.02263431547071027</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3160596838346168 0.2907749091278475 0.2465265533910011 1</ambient>
+            <diffuse>0.3160596838346168 0.2907749091278475 0.2465265533910011 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_021">
+      <static>true</static>
+      <pose>8.641087501428618 -7.47060073517905 0.013029136327336262 0 0 -0.07674155215056677</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.03469871219901252 0.040585847852881086 0.03754006047104425</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.03469871219901252 0.040585847852881086 0.03754006047104425</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3335783576457981 0.30689208903413423 0.2601911189637225 1</ambient>
+            <diffuse>0.3335783576457981 0.30689208903413423 0.2601911189637225 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_022">
+      <static>true</static>
+      <pose>-12.747703826910312 5.642685876338749 0.04866637708649972 0 0 3.0823702434845472</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.03911183286641965 0.03396391094617748 0.043191716387411656</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.03911183286641965 0.03396391094617748 0.043191716387411656</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.48296432389506627 0.444327177983461 0.3767121726381517 1</ambient>
+            <diffuse>0.48296432389506627 0.444327177983461 0.3767121726381517 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_023">
+      <static>true</static>
+      <pose>-7.284418672661543 -2.8551737043344154 0.4976193459538532 0 0 -1.375942580803837</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.02341152091321538 0.027820377447146237 0.029263564115318094</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.02341152091321538 0.027820377447146237 0.029263564115318094</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.43197558847097495 0.397417541393297 0.3369409590073605 1</ambient>
+            <diffuse>0.43197558847097495 0.397417541393297 0.3369409590073605 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_024">
+      <static>true</static>
+      <pose>14.564278197310223 12.046225792129164 0.018265360537066726 0 0 0.4650023740777458</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.04997346690067119 0.04437459411615138 0.04027725689913602</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.04997346690067119 0.04437459411615138 0.04027725689913602</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3921990999675724 0.3608231719701666 0.3059152979747065 1</ambient>
+            <diffuse>0.3921990999675724 0.3608231719701666 0.3059152979747065 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_025">
+      <static>true</static>
+      <pose>-3.0470984682851334 0.11033621136001592 0.07158713300946942 0 0 -2.1185943842593273</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.04436359995853215 0.03388392163466285 0.04214371573560492</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.04436359995853215 0.03388392163466285 0.04214371573560492</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3079272972521729 0.2832931134719991 0.24018329185669485 1</ambient>
+            <diffuse>0.3079272972521729 0.2832931134719991 0.24018329185669485 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_026">
+      <static>true</static>
+      <pose>1.138946095206805 -8.983449953314087 0.02957911630634848 0 0 -2.1570379905132193</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.040686770072546175 0.037528972529692804 0.041082105981039556</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.040686770072546175 0.037528972529692804 0.041082105981039556</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4098021569633934 0.37701798440632195 0.31964568243144686 1</ambient>
+            <diffuse>0.4098021569633934 0.37701798440632195 0.31964568243144686 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_027">
+      <static>true</static>
+      <pose>3.7206639751415587 -5.858158092443058 -0.03825957955245114 0 0 2.5039449292043514</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.028418997899243213 0.02697595025059328 0.020526100941995935</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.028418997899243213 0.02697595025059328 0.020526100941995935</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.36807219521410905 0.33862641959698037 0.28709631226700505 1</ambient>
+            <diffuse>0.36807219521410905 0.33862641959698037 0.28709631226700505 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_028">
+      <static>true</static>
+      <pose>-8.398752648200835 -4.82056544764011 0.23383899108584508 0 0 -1.6900031917474494</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.04039640565680487 0.036715599352509606 0.04231752863489985</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.04039640565680487 0.036715599352509606 0.04231752863489985</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3734079101635951 0.3435352773505075 0.29125816992760417 1</ambient>
+            <diffuse>0.3734079101635951 0.3435352773505075 0.29125816992760417 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_029">
+      <static>true</static>
+      <pose>5.19889905848682 3.7362032696843244 0.18288026365016855 0 0 -0.003234064738419473</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.04524047762667599 0.04560816462457415 0.04105274085840149</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.04524047762667599 0.04560816462457415 0.04105274085840149</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.49161304273158 0.45228399931305363 0.3834581733306324 1</ambient>
+            <diffuse>0.49161304273158 0.45228399931305363 0.3834581733306324 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_030">
+      <static>true</static>
+      <pose>-1.9002685138721187 -6.67402906068251 0.01582957464497459 0 0 -0.9852624078337313</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.02566441417030678 0.030361504622896544 0.029494361425583236</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.02566441417030678 0.030361504622896544 0.029494361425583236</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.429911427814462 0.39551851358930507 0.3353309136952804 1</ambient>
+            <diffuse>0.429911427814462 0.39551851358930507 0.3353309136952804 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_031">
+      <static>true</static>
+      <pose>5.236178156342568 -0.2855242177429691 0.02160735073399131 0 0 1.0378654660291513</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.029408931714455896 0.034726583823021795 0.02274505366778751</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.029408931714455896 0.034726583823021795 0.02274505366778751</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3038795698607129 0.2795692042718559 0.23702606449135608 1</ambient>
+            <diffuse>0.3038795698607129 0.2795692042718559 0.23702606449135608 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_032">
+      <static>true</static>
+      <pose>12.213681702200315 -1.7417015377017986 0.018187462752277582 0 0 -2.030275691117049</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.030730661584987783 0.03217343220296747 0.033828214325369164</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.030730661584987783 0.03217343220296747 0.033828214325369164</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.47331289193828097 0.4354478605832185 0.3691840557118592 1</ambient>
+            <diffuse>0.47331289193828097 0.4354478605832185 0.3691840557118592 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_033">
+      <static>true</static>
+      <pose>-15.430279363732225 -4.911858888791537 0.021962747088688468 0 0 2.049676285512267</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.031563479996707666 0.025881041770169737 0.026497352842654528</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.031563479996707666 0.025881041770169737 0.026497352842654528</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3083769125070519 0.28370675950648777 0.2405339917555005 1</ambient>
+            <diffuse>0.3083769125070519 0.28370675950648777 0.2405339917555005 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_034">
+      <static>true</static>
+      <pose>-5.921515330372623 -1.6805338499610194 0.3492306404255646 0 0 2.983141580658054</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.03744074459686323 0.031416641293805454 0.030466248068906278</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.03744074459686323 0.031416641293805454 0.030466248068906278</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3341707131944107 0.30743705613885786 0.2606531562916404 1</ambient>
+            <diffuse>0.3341707131944107 0.30743705613885786 0.2606531562916404 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_035">
+      <static>true</static>
+      <pose>2.6959489001913504 -11.728259500556726 0.021612579305042862 0 0 0.4817629199029141</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.027512106947289575 0.028797990179026976 0.030017471257003978</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.027512106947289575 0.028797990179026976 0.030017471257003978</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.36382120981645694 0.3347155130311404 0.2837805436568364 1</ambient>
+            <diffuse>0.36382120981645694 0.3347155130311404 0.2837805436568364 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_036">
+      <static>true</static>
+      <pose>13.352846740693671 -0.5286727942069582 0.002837754260525214 0 0 -1.2606779008682685</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.03210733223235134 0.04012202931544499 0.02469342514542537</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.03210733223235134 0.04012202931544499 0.02469342514542537</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3267732012856521 0.3006313451828 0.25488309700280865 1</ambient>
+            <diffuse>0.3267732012856521 0.3006313451828 0.25488309700280865 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_037">
+      <static>true</static>
+      <pose>9.60088248878073 4.535258643634357 0.405483252613221 0 0 -0.30697278088993807</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.029752612206751385 0.04012660971226998 0.03229064252497042</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.029752612206751385 0.04012660971226998 0.03229064252497042</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3511721585654835 0.32307838588024484 0.2739142836810771 1</ambient>
+            <diffuse>0.3511721585654835 0.32307838588024484 0.2739142836810771 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_038">
+      <static>true</static>
+      <pose>-3.657669382932214 -2.871562852483706 0.22963505603281473 0 0 -1.8537267122653371</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.03507346515499356 0.03437968472761107 0.041339851089329645</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.03507346515499356 0.03437968472761107 0.041339851089329645</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4960651357608954 0.45637992490002377 0.38693080589349843 1</ambient>
+            <diffuse>0.4960651357608954 0.45637992490002377 0.38693080589349843 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_039">
+      <static>true</static>
+      <pose>-7.879502179065183 9.748901210245613 0.03455170910635967 0 0 1.9964295202030184</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.040130966272483436 0.046275359815921534 0.04897035958417831</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.040130966272483436 0.046275359815921534 0.04897035958417831</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.44339781782908183 0.4079259924027553 0.3458502979066838 1</ambient>
+            <diffuse>0.44339781782908183 0.4079259924027553 0.3458502979066838 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_040">
+      <static>true</static>
+      <pose>13.938478772428713 -3.2643875739963715 0.03300033179162208 0 0 -3.012556276575018</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.031149687840890183 0.030049098457503275 0.03169508669925507</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.031149687840890183 0.030049098457503275 0.03169508669925507</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.42143774561253533 0.3877227259635325 0.32872144157777755 1</ambient>
+            <diffuse>0.42143774561253533 0.3877227259635325 0.32872144157777755 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_041">
+      <static>true</static>
+      <pose>4.904968264840907 -3.0417066466192253 0.010469518105894707 0 0 -2.326323710705393</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.021504050864153777 0.02489931981682897 0.026289139340677385</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.021504050864153777 0.02489931981682897 0.026289139340677385</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2898994841388861 0.26670752540777526 0.22612159762833117 1</ambient>
+            <diffuse>0.2898994841388861 0.26670752540777526 0.22612159762833117 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_042">
+      <static>true</static>
+      <pose>0.5456882717289169 -10.940121118077538 0.020485673274957098 0 0 -0.6466586726743522</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.02464990101815886 0.025771015605603614 0.028452323992995972</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.02464990101815886 0.025771015605603614 0.028452323992995972</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2944289046000941 0.27087459223208654 0.22965454558807338 1</ambient>
+            <diffuse>0.2944289046000941 0.27087459223208654 0.22965454558807338 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_043">
+      <static>true</static>
+      <pose>6.50928863085489 4.202500666984939 0.5181315762034868 0 0 3.123794553938736</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.032453266526318546 0.04151515631138754 0.029627573073953653</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.032453266526318546 0.04151515631138754 0.029627573073953653</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.40428032221624277 0.37193789643894337 0.3153386513286694 1</ambient>
+            <diffuse>0.40428032221624277 0.37193789643894337 0.3153386513286694 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_044">
+      <static>true</static>
+      <pose>-5.538311484775225 -5.088497576580359 0.6686062736803047 0 0 0.2991487653524749</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.036441515242214756 0.037832517922530826 0.036123113028156864</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.036441515242214756 0.037832517922530826 0.036123113028156864</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.463624223970061 0.42653428605245614 0.36162689469664755 1</ambient>
+            <diffuse>0.463624223970061 0.42653428605245614 0.36162689469664755 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_045">
+      <static>true</static>
+      <pose>7.539383619022299 -7.4651477421164625 0.03986034205300545 0 0 1.7915447635753754</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.030348370864774456 0.024229708331783624 0.025563105081515786</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.030348370864774456 0.024229708331783624 0.025563105081515786</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2844624445157077 0.2617054489544511 0.221880706722252 1</ambient>
+            <diffuse>0.2844624445157077 0.2617054489544511 0.221880706722252 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_046">
+      <static>true</static>
+      <pose>16.35912255847544 7.471933733310291 0.021664577559662536 0 0 3.116998375186376</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.037004734484089134 0.036842270971502035 0.02855570551586238</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.037004734484089134 0.036842270971502035 0.02855570551586238</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4491197064532267 0.4131901299369686 0.35031337103351684 1</ambient>
+            <diffuse>0.4491197064532267 0.4131901299369686 0.35031337103351684 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_047">
+      <static>true</static>
+      <pose>13.38544806837714 -11.151897114452181 0.027187761812309245 0 0 -1.3463284828881215</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.035783348712681816 0.041258945079530485 0.03252726819473579</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.035783348712681816 0.041258945079530485 0.03252726819473579</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2938195207529262 0.2703139590926921 0.22917922618728245 1</ambient>
+            <diffuse>0.2938195207529262 0.2703139590926921 0.22917922618728245 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_048">
+      <static>true</static>
+      <pose>0.6212655731791301 10.962517633497729 0.023653050423837252 0 0 -1.0458367071696726</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.038690358689442116 0.039260944938432664 0.03408012589581671</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.038690358689442116 0.039260944938432664 0.03408012589581671</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3654063925205445 0.33617388111890095 0.2850169861660247 1</ambient>
+            <diffuse>0.3654063925205445 0.33617388111890095 0.2850169861660247 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_049">
+      <static>true</static>
+      <pose>-6.270681316671974 -1.785737205082654 0.37029301292409794 0 0 0.9573422015283315</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.03537652007863276 0.03844754048298761 0.027242436084589833</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.03537652007863276 0.03844754048298761 0.027242436084589833</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.41777634574373124 0.38435423808423275 0.3258655496801104 1</ambient>
+            <diffuse>0.41777634574373124 0.38435423808423275 0.3258655496801104 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_050">
+      <static>true</static>
+      <pose>8.239350037752285 5.169472339047406 0.8711757458608546 0 0 0.009937761860795202</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.026263243196936594 0.02473268813243766 0.027311221869276675</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.026263243196936594 0.02473268813243766 0.027311221869276675</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.40616939328770474 0.3736758418246884 0.31681212676440973 1</ambient>
+            <diffuse>0.40616939328770474 0.3736758418246884 0.31681212676440973 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_051">
+      <static>true</static>
+      <pose>5.1516526867764085 8.34789952338414 0.04579089189260467 0 0 -2.3058142085741267</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.03912848236163165 0.03643672013314517 0.033345149267642496</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.03912848236163165 0.03643672013314517 0.033345149267642496</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3534122057811351 0.3251392293186443 0.2756615205092854 1</ambient>
+            <diffuse>0.3534122057811351 0.3251392293186443 0.2756615205092854 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_052">
+      <static>true</static>
+      <pose>2.267964281323966 11.950949901268029 0.02185271739936613 0 0 2.671214192152714</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.03423626678252528 0.032881634563066274 0.030735600310664725</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.03423626678252528 0.032881634563066274 0.030735600310664725</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.38367022389905847 0.3529766059871338 0.2992627746412656 1</ambient>
+            <diffuse>0.38367022389905847 0.3529766059871338 0.2992627746412656 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_053">
+      <static>true</static>
+      <pose>-0.6515397881535954 10.5765645302718 0.0028825535774676322 0 0 2.6227831046015595</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.03672340249769978 0.04271182384025835 0.0426054824174268</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.03672340249769978 0.04271182384025835 0.0426054824174268</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.42610126318981745 0.39201316213463205 0.33235898528805763 1</ambient>
+            <diffuse>0.42610126318981745 0.39201316213463205 0.33235898528805763 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_054">
+      <static>true</static>
+      <pose>12.719534433584421 -9.37411846298199 0.05166866309961153 0 0 -1.508450389794351</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.04264343741242766 0.03560579955262947 0.04046156973597302</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.04264343741242766 0.03560579955262947 0.04046156973597302</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4210925738953628 0.3874051679837338 0.328452207638383 1</ambient>
+            <diffuse>0.4210925738953628 0.3874051679837338 0.328452207638383 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_055">
+      <static>true</static>
+      <pose>2.9644459742910954 -3.1019982617221604 -0.23337081838047574 0 0 0.0401787123228714</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.12636107520192172 0.11010796486428784 0.10634806649061017</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.12636107520192172 0.11010796486428784 0.10634806649061017</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.46244421345430653 0.425448676377962 0.3607064864943591 1</ambient>
+            <diffuse>0.46244421345430653 0.425448676377962 0.3607064864943591 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_056">
+      <static>true</static>
+      <pose>15.218189783773095 -3.4702699628493434 0.013308637154512772 0 0 -2.298007655299878</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.06415329717155113 0.06446715794562996 0.0419159393206384</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.06415329717155113 0.06446715794562996 0.0419159393206384</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3947844932637098 0.363201733802613 0.30793190474569365 1</ambient>
+            <diffuse>0.3947844932637098 0.363201733802613 0.30793190474569365 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_057">
+      <static>true</static>
+      <pose>-15.319861884024956 5.309670331685183 0.07336500637567288 0 0 -2.4902094734161846</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.15232403767869557 0.14811015900003666 0.09283582281520039</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.15232403767869557 0.14811015900003666 0.09283582281520039</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.458628208886677 0.42193795217574287 0.35773000293160806 1</ambient>
+            <diffuse>0.458628208886677 0.42193795217574287 0.35773000293160806 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_058">
+      <static>true</static>
+      <pose>-12.723146242555064 -1.559237058411533 0.060061354596474 0 0 1.1603765522989313</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.13461463293102263 0.13064143795966948 0.10150613686170047</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.13461463293102263 0.13064143795966948 0.10150613686170047</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3850605228732216 0.3542556810433639 0.30034720784111285 1</ambient>
+            <diffuse>0.3850605228732216 0.3542556810433639 0.30034720784111285 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_059">
+      <static>true</static>
+      <pose>6.031061708197633 4.597441112914204 0.6439044942987941 0 0 -2.0951084742846957</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.16404390081673176 0.1313864769456787 0.10426084408699983</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.16404390081673176 0.1313864769456787 0.10426084408699983</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3830306920049127 0.3523882366445197 0.2987639397638319 1</ambient>
+            <diffuse>0.3830306920049127 0.3523882366445197 0.2987639397638319 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_060">
+      <static>true</static>
+      <pose>-12.008544146376728 8.177581684072944 0.07803459106078774 0 0 1.761132956886179</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.12696251743371792 0.10885534963249424 0.1083813764733163</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.12696251743371792 0.10885534963249424 0.1083813764733163</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.40303725969986265 0.3707942789238737 0.31436906256589287 1</ambient>
+            <diffuse>0.40303725969986265 0.3707942789238737 0.31436906256589287 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_061">
+      <static>true</static>
+      <pose>-2.3003192701968658 -4.729555703133406 0.02801655676145088 0 0 1.2069491915958368</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.05478237643065304 0.06470438126237178 0.05654942542064225</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.05478237643065304 0.06470438126237178 0.05654942542064225</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4706242411892836 0.43297430189414093 0.3670869081276412 1</ambient>
+            <diffuse>0.4706242411892836 0.43297430189414093 0.3670869081276412 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_062">
+      <static>true</static>
+      <pose>13.794769330087803 -3.6816644104756744 0.04528312832697207 0 0 -1.1579435645465563</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.08134845360310028 0.09086593907262984 0.06106087161040299</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.08134845360310028 0.09086593907262984 0.06106087161040299</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4041208553111169 0.3717911868862276 0.3152142671426712 1</ambient>
+            <diffuse>0.4041208553111169 0.3717911868862276 0.3152142671426712 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_063">
+      <static>true</static>
+      <pose>-3.651547043194549 2.80820540648096 0.2292518659673797 0 0 -0.18306471468435692</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.05235164818159786 0.060250707884885395 0.06403467438963624</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.05235164818159786 0.060250707884885395 0.06403467438963624</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.36215144231420626 0.33317932692906976 0.2824781250050809 1</ambient>
+            <diffuse>0.36215144231420626 0.33317932692906976 0.2824781250050809 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_064">
+      <static>true</static>
+      <pose>0.5753512724435339 -8.802106033508526 0.034247203275537534 0 0 -1.6552524822425168</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.07267930078237474 0.06829364077650993 0.047565560104913245</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.07267930078237474 0.06829364077650993 0.047565560104913245</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.28116039006040533 0.2586675588555729 0.21930510424711616 1</ambient>
+            <diffuse>0.28116039006040533 0.2586675588555729 0.21930510424711616 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_065">
+      <static>true</static>
+      <pose>-8.491085627310989 8.591617220343473 0.03288150342628883 0 0 1.4191163790664794</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.050622351174123746 0.047445427531527126 0.045668754758734484</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.050622351174123746 0.047445427531527126 0.045668754758734484</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2910282487254285 0.2677459888273942 0.2270020340058342 1</ambient>
+            <diffuse>0.2910282487254285 0.2677459888273942 0.2270020340058342 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_066">
+      <static>true</static>
+      <pose>-14.249774234300327 7.513164730524004 0.05321307461445139 0 0 0.9419130510421576</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.10554553849555295 0.12426841298607696 0.07390704807562694</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.10554553849555295 0.12426841298607696 0.07390704807562694</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.40815541308844944 0.3755029800413735 0.31836122220899055 1</ambient>
+            <diffuse>0.40815541308844944 0.3755029800413735 0.31836122220899055 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_067">
+      <static>true</static>
+      <pose>6.446445010044357 11.304969721680148 0.04025439457348965 0 0 -1.9569255697963337</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0754724707811212 0.08519776710992803 0.052406037136444705</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0754724707811212 0.08519776710992803 0.052406037136444705</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.28856228009564666 0.26547729768799494 0.2250785784746044 1</ambient>
+            <diffuse>0.28856228009564666 0.26547729768799494 0.2250785784746044 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_068">
+      <static>true</static>
+      <pose>12.606984714131585 -1.420538784671562 0.08492075357535095 0 0 1.4077649610861558</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.08079137356003643 0.08732528097308344 0.09103780028320431</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.08079137356003643 0.08732528097308344 0.09103780028320431</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3125364707265676 0.2875335530684422 0.24377844716672273 1</ambient>
+            <diffuse>0.3125364707265676 0.2875335530684422 0.24377844716672273 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_069">
+      <static>true</static>
+      <pose>-9.580465965709838 -0.5343471888011564 0.03963953138945833 0 0 -2.3689764312116792</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.10120399674285348 0.09083367768426202 0.06848355250147672</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.10120399674285348 0.09083367768426202 0.06848355250147672</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.36256297991825936 0.3335579415247986 0.2827991243362423 1</ambient>
+            <diffuse>0.36256297991825936 0.3335579415247986 0.2827991243362423 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_070">
+      <static>true</static>
+      <pose>-12.147714061224958 -3.2866597289005295 0.043328761624567565 0 0 0.5504584660687044</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.06266781523193117 0.07190072252437368 0.06217185457710766</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.06266781523193117 0.07190072252437368 0.06217185457710766</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4761844272381418 0.43808967305909047 0.3714238532457506 1</ambient>
+            <diffuse>0.4761844272381418 0.43808967305909047 0.3714238532457506 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_071">
+      <static>true</static>
+      <pose>-10.520533347735066 -11.351681067628371 0.05927520600893482 0 0 1.2038406885986044</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.15505463446709872 0.1367997012275851 0.10077743487145051</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.15505463446709872 0.1367997012275851 0.10077743487145051</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.48247318423677643 0.4438753294978343 0.37632908370468565 1</ambient>
+            <diffuse>0.48247318423677643 0.4438753294978343 0.37632908370468565 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_072">
+      <static>true</static>
+      <pose>2.014065844949606 5.7760804705978614 -0.03533484642815059 0 0 1.8323159771520094</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.08465100822565413 0.09180965521341813 0.06098117732950829</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.08465100822565413 0.09180965521341813 0.06098117732950829</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3998819432667745 0.36789138780543257 0.31190791574808413 1</ambient>
+            <diffuse>0.3998819432667745 0.36789138780543257 0.31190791574808413 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_073">
+      <static>true</static>
+      <pose>-0.5031506824245486 2.6875256610128098 0.3893072481122659 0 0 2.5852619780209274</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.10398511263958425 0.08359095692273376 0.07662066854810952</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.10398511263958425 0.08359095692273376 0.07662066854810952</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.33458708693860717 0.3078201199835186 0.2609779278121136 1</ambient>
+            <diffuse>0.33458708693860717 0.3078201199835186 0.2609779278121136 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_074">
+      <static>true</static>
+      <pose>-1.4538108613078808 1.86632824988164 0.3823094709403951 0 0 0.985885554064045</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.14158531685787154 0.10341557658761268 0.10044877148247076</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.14158531685787154 0.10341557658761268 0.10044877148247076</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.49899912924585255 0.45907919890618437 0.389219320811765 1</ambient>
+            <diffuse>0.49899912924585255 0.45907919890618437 0.389219320811765 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_075">
+      <static>true</static>
+      <pose>-13.634403476920209 0.2182453360741885 0.04120150662682939 0 0 -0.5105852068143313</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.05294679833530535 0.07475864118766021 0.055949569776509736</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.05294679833530535 0.07475864118766021 0.055949569776509736</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.47472263467452186 0.43674482390056013 0.37028365504612704 1</ambient>
+            <diffuse>0.47472263467452186 0.43674482390056013 0.37028365504612704 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_076">
+      <static>true</static>
+      <pose>-7.1019740719693 -6.750447670164442 0.205202808607102 0 0 -0.6462683110125269</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.06681923360657017 0.08080224107070821 0.050898424232870665</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.06681923360657017 0.08080224107070821 0.050898424232870665</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.49501724534443736 0.4554158657168824 0.38611345136866115 1</ambient>
+            <diffuse>0.49501724534443736 0.4554158657168824 0.38611345136866115 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_077">
+      <static>true</static>
+      <pose>-8.073642923153308 -0.7051795750489234 0.13036316290267894 0 0 -1.690109484612192</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.12049573154966045 0.11254402582578844 0.13136916264891021</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.12049573154966045 0.11254402582578844 0.13136916264891021</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3575066533468105 0.32890612107906564 0.2788551896105122 1</ambient>
+            <diffuse>0.3575066533468105 0.32890612107906564 0.2788551896105122 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_078">
+      <static>true</static>
+      <pose>-10.07736151300038 -2.668889698673272 0.07838756671891574 0 0 0.01022113776925293</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.09768793634651486 0.10886013823251939 0.0942651769558617</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.09768793634651486 0.10886013823251939 0.0942651769558617</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.28940894541403156 0.26625622978090907 0.22573897742294463 1</ambient>
+            <diffuse>0.28940894541403156 0.26625622978090907 0.22573897742294463 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_079">
+      <static>true</static>
+      <pose>-2.6960426961878774 -1.9410970261770224 0.06724473141720766 0 0 2.0725765438879753</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.09738046283079585 0.08302826167668913 0.08354231122384231</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.09738046283079585 0.08302826167668913 0.08354231122384231</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.48913913546763943 0.4500080046302283 0.38152852566475876 1</ambient>
+            <diffuse>0.48913913546763943 0.4500080046302283 0.38152852566475876 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_080">
+      <static>true</static>
+      <pose>-7.831882662400741 8.089930301239274 0.06597268341192519 0 0 -0.5676294962073474</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.10598234911050027 0.11101559490316364 0.09260308379446595</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.10598234911050027 0.11101559490316364 0.09260308379446595</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4124563312937389 0.37945982479023976 0.32171593840911633 1</ambient>
+            <diffuse>0.4124563312937389 0.37945982479023976 0.32171593840911633 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_081">
+      <static>true</static>
+      <pose>3.5731059745651343 10.666760474569713 0.05448667257623219 0 0 -0.7088571248416997</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.1270738646506997 0.09077790160827666 0.07236195714330312</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.1270738646506997 0.09077790160827666 0.07236195714330312</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2905122461586676 0.2672712664659742 0.22659955200376075 1</ambient>
+            <diffuse>0.2905122461586676 0.2672712664659742 0.22659955200376075 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_082">
+      <static>true</static>
+      <pose>-2.0711979403803387 2.4692981562996845 0.3750205242437474 0 0 -1.0027829633321454</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.0610192012705412 0.05491516322708722 0.05402397489987268</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.0610192012705412 0.05491516322708722 0.05402397489987268</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3107749203181316 0.2859129266926811 0.24240443784814264 1</ambient>
+            <diffuse>0.3107749203181316 0.2859129266926811 0.24240443784814264 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_083">
+      <static>true</static>
+      <pose>6.7983129898716825 3.5901974969804087 0.30143154188004884 0 0 -2.4972142704228775</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.07838486210036594 0.0665866003351467 0.06984532801030309</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.07838486210036594 0.0665866003351467 0.06984532801030309</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.44050885406945167 0.4052681457438956 0.3435969061741723 1</ambient>
+            <diffuse>0.44050885406945167 0.4052681457438956 0.3435969061741723 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_084">
+      <static>true</static>
+      <pose>-1.250030518002788 2.351326706200526 0.4127221279045541 0 0 0.8457557763358157</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.07733596144285239 0.07069866326319289 0.08333198656435421</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.07733596144285239 0.07069866326319289 0.08333198656435421</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.47521790685631127 0.4372004743078064 0.3706699673479228 1</ambient>
+            <diffuse>0.47521790685631127 0.4372004743078064 0.3706699673479228 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_085">
+      <static>true</static>
+      <pose>15.93422104481266 -0.5665947907684465 0.04557400924758973 0 0 1.8963314591430747</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.05773355559864247 0.041378152414300366 0.04438634775947473</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.05773355559864247 0.041378152414300366 0.04438634775947473</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4395047019394649 0.40434432578430773 0.34281366751278264 1</ambient>
+            <diffuse>0.4395047019394649 0.40434432578430773 0.34281366751278264 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_086">
+      <static>true</static>
+      <pose>15.316234909411126 -4.360491289337173 0.03336517849845399 0 0 -1.130599123494893</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.06639207300173143 0.07114201448404675 0.05144125395127897</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.06639207300173143 0.07114201448404675 0.05144125395127897</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4355115238625951 0.4006706019535875 0.3396989886128242 1</ambient>
+            <diffuse>0.4355115238625951 0.4006706019535875 0.3396989886128242 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_087">
+      <static>true</static>
+      <pose>-7.811389337861826 10.371150697242655 0.06314921448253978 0 0 2.0814766911595672</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.06792434091454135 0.10042270015407917 0.08997924329717871</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.06792434091454135 0.10042270015407917 0.08997924329717871</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.37339311279081977 0.3435216637675542 0.2912466279768394 1</ambient>
+            <diffuse>0.37339311279081977 0.3435216637675542 0.2912466279768394 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_088">
+      <static>true</static>
+      <pose>-4.472283785373039 -0.05690969999094442 0.04721958125727377 0 0 -0.9996986444551514</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.059803303531472736 0.04292169934215762 0.04065675493846464</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.059803303531472736 0.04292169934215762 0.04065675493846464</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3188025810404751 0.2932983745572371 0.24866601321157059 1</ambient>
+            <diffuse>0.3188025810404751 0.2932983745572371 0.24866601321157059 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_089">
+      <static>true</static>
+      <pose>-3.10057148945992 -3.1172885025403634 0.19016475665406668 0 0 2.328086082205446</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.15068064725587693 0.11980908122977778 0.14693404808938737</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.15068064725587693 0.11980908122977778 0.14693404808938737</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.35652011715066995 0.3279985077786164 0.2780856913775226 1</ambient>
+            <diffuse>0.35652011715066995 0.3279985077786164 0.2780856913775226 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_090">
+      <static>true</static>
+      <pose>8.536242169353486 -2.2825378509317176 0.1054693282612172 0 0 -1.80536701736111</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.14150974346717324 0.14050235026277716 0.131993454469237</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.14150974346717324 0.14050235026277716 0.131993454469237</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3456536700008924 0.31800137640082105 0.2696098626006961 1</ambient>
+            <diffuse>0.3456536700008924 0.31800137640082105 0.2696098626006961 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_091">
+      <static>true</static>
+      <pose>13.637923207502325 -10.25110839935338 0.09563395700674804 0 0 1.3017098896421606</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.11604195230825333 0.1554752303209512 0.15367063029454098</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.11604195230825333 0.1554752303209512 0.15367063029454098</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3585332399059125 0.32985058071343953 0.27965592712661175 1</ambient>
+            <diffuse>0.3585332399059125 0.32985058071343953 0.27965592712661175 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_092">
+      <static>true</static>
+      <pose>-4.440323126619701 -6.473642986986194 0.24003990288761332 0 0 2.1192046811787275</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.04406036340725274 0.05891149656971692 0.05433262433505867</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.04406036340725274 0.05891149656971692 0.05433262433505867</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4831395881706036 0.4444884211169553 0.37684887877307083 1</ambient>
+            <diffuse>0.4831395881706036 0.4444884211169553 0.37684887877307083 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_093">
+      <static>true</static>
+      <pose>-12.5419222066918 -0.654586010490199 0.027142272113445023 0 0 2.568341447754368</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.07220544087994583 0.05853617019642926 0.06378616043719874</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.07220544087994583 0.05853617019642926 0.06378616043719874</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.43375581824042053 0.3990553527811869 0.33832953822752804 1</ambient>
+            <diffuse>0.43375581824042053 0.3990553527811869 0.33832953822752804 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_094">
+      <static>true</static>
+      <pose>-6.12921380004847 1.9806469947533731 0.05682073842788012 0 0 -0.052305349242441235</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.07582721542724999 0.09499684854299499 0.06954631111052943</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.07582721542724999 0.09499684854299499 0.06954631111052943</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.349802962153919 0.3218187251816055 0.2728463104800568 1</ambient>
+            <diffuse>0.349802962153919 0.3218187251816055 0.2728463104800568 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_095">
+      <static>true</static>
+      <pose>-9.824902615518315 10.351060915859755 0.0678690582726346 0 0 1.8087122188604772</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.1214378628959144 0.08490986543043026 0.09426258093421473</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.1214378628959144 0.08490986543043026 0.09426258093421473</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3236666403941342 0.2977733091626035 0.25245997950742466 1</ambient>
+            <diffuse>0.3236666403941342 0.2977733091626035 0.25245997950742466 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_096">
+      <static>true</static>
+      <pose>-11.710819207660904 4.889182181653577 0.09521167465308578 0 0 -2.5894308588234587</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.1467794872453209 0.13987577618655353 0.1446953706691573</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.1467794872453209 0.13987577618655353 0.1446953706691573</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4025152905650881 0.3703140673198811 0.3139619266407687 1</ambient>
+            <diffuse>0.4025152905650881 0.3703140673198811 0.3139619266407687 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_097">
+      <static>true</static>
+      <pose>-14.297085202605233 2.5393929898845258 0.08092545647511633 0 0 -2.388162946141964</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.11703384005159394 0.12011460052150225 0.11559173579280406</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.11703384005159394 0.12011460052150225 0.11559173579280406</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2873060128106912 0.2643215317858359 0.22409868999233912 1</ambient>
+            <diffuse>0.2873060128106912 0.2643215317858359 0.22409868999233912 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_098">
+      <static>true</static>
+      <pose>14.464917469868237 -7.691353550486826 0.08873439287355496 0 0 0.9653854280302321</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.09874817182921103 0.10900827318085911 0.12300690200252079</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.09874817182921103 0.10900827318085911 0.12300690200252079</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4622159263858835 0.42523865227501284 0.36052842258098916 1</ambient>
+            <diffuse>0.4622159263858835 0.42523865227501284 0.36052842258098916 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_099">
+      <static>true</static>
+      <pose>-6.762264906435174 -3.033240845889127 0.6808033123240198 0 0 2.2273903840842575</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0692858304107695 0.07355937639001797 0.049268293095689024</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.0692858304107695 0.07355937639001797 0.049268293095689024</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.34559600838854454 0.317948327717461 0.26956488654306476 1</ambient>
+            <diffuse>0.34559600838854454 0.317948327717461 0.26956488654306476 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_100">
+      <static>true</static>
+      <pose>8.274319723703698 2.754185779062057 0.13532439833264975 0 0 1.2341612831305726</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.20938775865711648 0.1849841498148817 0.17659803902548693</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.20938775865711648 0.1849841498148817 0.17659803902548693</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.29856474408433126 0.27467956455758474 0.2328805003857784 1</ambient>
+            <diffuse>0.29856474408433126 0.27467956455758474 0.2328805003857784 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_101">
+      <static>true</static>
+      <pose>15.303268384168135 -11.747903697006858 0.12293638965268182 0 0 -0.9151606442445166</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.21241643771981683 0.21098911267307038 0.20157458724057398</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.21241643771981683 0.21098911267307038 0.20157458724057398</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4167686716889657 0.38342717795384845 0.32507956391739323 1</ambient>
+            <diffuse>0.4167686716889657 0.38342717795384845 0.32507956391739323 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_102">
+      <static>true</static>
+      <pose>5.494993526362602 -8.349349390603678 0.11173757554668642 0 0 1.313116334500302</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.2100040269138105 0.2608517035586108 0.1959865165634713</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.2100040269138105 0.2608517035586108 0.1959865165634713</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.45859726589719696 0.4219094846254212 0.35770586739981364 1</ambient>
+            <diffuse>0.45859726589719696 0.4219094846254212 0.35770586739981364 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_103">
+      <static>true</static>
+      <pose>4.143735406486705 -12.380015517718551 0.16520169951911648 0 0 -0.1619492495899051</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.316094193286826 0.2886403264966809 0.211713307415724</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.316094193286826 0.2886403264966809 0.211713307415724</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.477663751658283 0.4394506515256204 0.37257772629346075 1</ambient>
+            <diffuse>0.477663751658283 0.4394506515256204 0.37257772629346075 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_104">
+      <static>true</static>
+      <pose>1.8804744305308496 3.7353147214165787 0.018692432720115768 0 0 -1.7463378703893684</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.13413226040210216 0.16167337653718883 0.10449032354790566</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.13413226040210216 0.16167337653718883 0.10449032354790566</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.42026052647235657 0.3866396843545681 0.32780321064843815 1</ambient>
+            <diffuse>0.42026052647235657 0.3866396843545681 0.32780321064843815 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_105">
+      <static>true</static>
+      <pose>15.379352068364785 -2.4475827008885727 0.14994652667908662 0 0 -1.5995848609894843</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.27514667607530485 0.3282351881345617 0.2337327752792212</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.27514667607530485 0.3282351881345617 0.2337327752792212</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.33778840640125457 0.3107653338891542 0.26347495699297857 1</ambient>
+            <diffuse>0.33778840640125457 0.3107653338891542 0.26347495699297857 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_106">
+      <static>true</static>
+      <pose>16.109453013761723 -1.1405723192906088 0.19287228399420303 0 0 -0.7305930426705323</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.21599794401288838 0.25641065934922874 0.23777479039612073</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.21599794401288838 0.25641065934922874 0.23777479039612073</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3238379626135397 0.29793092560445655 0.25259361083856097 1</ambient>
+            <diffuse>0.3238379626135397 0.29793092560445655 0.25259361083856097 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_107">
+      <static>true</static>
+      <pose>10.247563080169563 12.183663189477748 0.11084826925277923 0 0 0.2133701096299876</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.2045580541595578 0.2409629203026552 0.16845734658688782</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.2045580541595578 0.2409629203026552 0.16845734658688782</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.34345846638802885 0.31598178907698654 0.26789760378266253 1</ambient>
+            <diffuse>0.34345846638802885 0.31598178907698654 0.26789760378266253 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_108">
+      <static>true</static>
+      <pose>-3.5560151282429207 -0.7278755264670007 0.1966105607752473 0 0 -1.2965933889531278</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.2684396826878237 0.25015148100583234 0.244277091794109</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.2684396826878237 0.25015148100583234 0.244277091794109</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4928299749939159 0.45340357699440265 0.3844073804952544 1</ambient>
+            <diffuse>0.4928299749939159 0.45340357699440265 0.3844073804952544 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_109">
+      <static>true</static>
+      <pose>-9.574522236929525 9.609247773433292 0.10611619015417885 0 0 -0.13588685191256333</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.14685554473440585 0.14080055503955027 0.1473835974363595</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.14685554473440585 0.14080055503955027 0.1473835974363595</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.34702363043222806 0.31926173999764984 0.2706784317371379 1</ambient>
+            <diffuse>0.34702363043222806 0.31926173999764984 0.2706784317371379 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_110">
+      <static>true</static>
+      <pose>10.181531211234933 0.7211240329548119 0.10918710866886212 0 0 2.2859879738817783</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.15205651354513597 0.11749035194296815 0.14873115842466172</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.15205651354513597 0.11749035194296815 0.14873115842466172</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4990329510329224 0.45911031495028864 0.38924570180567947 1</ambient>
+            <diffuse>0.4990329510329224 0.45911031495028864 0.38924570180567947 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_111">
+      <static>true</static>
+      <pose>2.720684866112009 4.3042445601502095 -0.1528895626096728 0 0 -2.604645557758508</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.25464412990685215 0.22613902533768587 0.22916057623082775</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.25464412990685215 0.22613902533768587 0.22916057623082775</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.32914738402462596 0.3028155933026559 0.2567349595392083 1</ambient>
+            <diffuse>0.32914738402462596 0.3028155933026559 0.2567349595392083 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_112">
+      <static>true</static>
+      <pose>2.0334780186616435 6.423969282044155 0.09684032060613876 0 0 -0.5727874044691608</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.2852990178852413 0.23320110650012046 0.20622075232839923</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.2852990178852413 0.23320110650012046 0.20622075232839923</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.45073036454296755 0.4146719353795302 0.3515696843435147 1</ambient>
+            <diffuse>0.45073036454296755 0.4146719353795302 0.3515696843435147 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_113">
+      <static>true</static>
+      <pose>-13.86349267174527 9.226241436066353 0.11738428134520393 0 0 -2.754719601187976</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.14309561965298118 0.16967269397210186 0.16303372409056102</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.14309561965298118 0.16967269397210186 0.16303372409056102</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3853436476296675 0.35451615581929413 0.30056804515114066 1</ambient>
+            <diffuse>0.3853436476296675 0.35451615581929413 0.30056804515114066 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_114">
+      <static>true</static>
+      <pose>0.3884869137719882 -7.012617112687247 0.10905714509290676 0 0 -2.4188986697348436</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.17728704066849454 0.13990134738440207 0.13550083175805971</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.17728704066849454 0.13990134738440207 0.13550083175805971</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4504153930085547 0.41438216156787033 0.3513240065466727 1</ambient>
+            <diffuse>0.4504153930085547 0.41438216156787033 0.3513240065466727 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_115">
+      <static>true</static>
+      <pose>-2.706675446748097 8.592384255866229 0.10236102311829309 0 0 -2.856941801006392</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.18953276945509373 0.14765389946833773 0.14441131740345922</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.18953276945509373 0.14765389946833773 0.14441131740345922</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.30812981823203633 0.2834794327734734 0.24034125822098834 1</ambient>
+            <diffuse>0.30812981823203633 0.2834794327734734 0.24034125822098834 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_116">
+      <static>true</static>
+      <pose>8.799501316288527 10.886373601051279 0.14756529173494642 0 0 -1.5876025568520415</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.22720982695130967 0.27127789347809134 0.2138698803892012</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_4.stl</uri>
+              <scale>0.22720982695130967 0.27127789347809134 0.2138698803892012</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.29004725332152853 0.26684347305580625 0.22623685759079226 1</ambient>
+            <diffuse>0.29004725332152853 0.26684347305580625 0.22623685759079226 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_117">
+      <static>true</static>
+      <pose>-10.728397209034311 12.458695036735428 0.1336000503203928 0 0 0.8217044247849019</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.15746567310907864 0.14269898601897069 0.14636917902146435</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_5.stl</uri>
+              <scale>0.15746567310907864 0.14269898601897069 0.14636917902146435</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3354990550090662 0.3086591306083409 0.2616892629070716 1</ambient>
+            <diffuse>0.3354990550090662 0.3086591306083409 0.2616892629070716 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_118">
+      <static>true</static>
+      <pose>-5.219092848765127 -1.538272194921955 0.36062896447782067 0 0 2.426556589655937</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.17669226111113062 0.17107938427359404 0.1268510895537276</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_6.stl</uri>
+              <scale>0.17669226111113062 0.17107938427359404 0.1268510895537276</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.38653037684286184 0.3556079466954329 0.30149369393743225 1</ambient>
+            <diffuse>0.38653037684286184 0.3556079466954329 0.30149369393743225 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_119">
+      <static>true</static>
+      <pose>9.916231660937044 5.588597300392443 0.4864291425465364 0 0 -2.659870282263873</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.16212545924106866 0.16604113647782517 0.17271215944056179</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_7.stl</uri>
+              <scale>0.16212545924106866 0.16604113647782517 0.17271215944056179</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4574840737188544 0.42088534782134607 0.35683757750070644 1</ambient>
+            <diffuse>0.4574840737188544 0.42088534782134607 0.35683757750070644 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_120">
+      <static>true</static>
+      <pose>-2.09458408709504 -10.003111712342461 0.09669815182152486 0 0 2.740699841796216</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.17137270997512455 0.1351981059362569 0.13430298864100676</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_0.stl</uri>
+              <scale>0.17137270997512455 0.1351981059362569 0.13430298864100676</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.45589544166670215 0.419423806333366 0.3555984445000277 1</ambient>
+            <diffuse>0.45589544166670215 0.419423806333366 0.3555984445000277 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_121">
+      <static>true</static>
+      <pose>2.9005344098140853 -4.50013464343623 -0.05921822260606173 0 0 -2.5601742740715907</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.17465831433475867 0.20300290805497145 0.14979349622931815</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_1.stl</uri>
+              <scale>0.17465831433475867 0.20300290805497145 0.14979349622931815</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4212194891799019 0.3875219300455097 0.32855120156032347 1</ambient>
+            <diffuse>0.4212194891799019 0.3875219300455097 0.32855120156032347 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_122">
+      <static>true</static>
+      <pose>8.477680263959105 -3.790249050733694 0.09718860768671828 0 0 2.8645916615030353</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.24134794529716183 0.2458788733788821 0.13486518430531</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_2.stl</uri>
+              <scale>0.24134794529716183 0.2458788733788821 0.13486518430531</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4334513331038625 0.3987752264555535 0.33809203982101277 1</ambient>
+            <diffuse>0.4334513331038625 0.3987752264555535 0.33809203982101277 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="rock_123">
+      <static>true</static>
+      <pose>-13.689652710449037 4.658575825411564 0.1058648667675582 0 0 -2.524227866764362</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.2456497186116914 0.21881691530974173 0.16639459564680784</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.92</mu>
+                <mu2>0.92</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>irc_rock_3.stl</uri>
+              <scale>0.2456497186116914 0.21881691530974173 0.16639459564680784</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.3994519423609736 0.36749578697209573 0.3115725150415594 1</ambient>
+            <diffuse>0.3994519423609736 0.36749578697209573 0.3115725150415594 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="autonomous_marker">
+      <static>true</static>
+      <pose>10.0 -10.5 0.7618509780008983 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.95 .58 .08 1</ambient>
+            <diffuse>.95 .58 .08 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="astrobiology_marker">
+      <static>true</static>
+      <pose>-14.0 4.5 0.7541848983121823 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.18 .70 .34 1</ambient>
+            <diffuse>.18 .70 .34 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="delivery_marker">
+      <static>true</static>
+      <pose>4.8 -11.5 0.7403557766449316 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.14 .45 .90 1</ambient>
+            <diffuse>.14 .45 .90 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="servicing_marker">
+      <static>true</static>
+      <pose>-15.0 9.5 0.75 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>1.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.74 .30 .82 1</ambient>
+            <diffuse>.74 .30 .82 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="red_no_go_alpha">
+      <static>true</static>
+      <pose>4.0 8.0 -0.02176703044755372 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>1.0</radius>
+              <length>0.015</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.92 .02 .02 .72</ambient>
+            <diffuse>.92 .02 .02 .72</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="red_no_go_bravo">
+      <static>true</static>
+      <pose>12.0 2.5 0.01663589465824305 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.8</radius>
+              <length>0.015</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.92 .02 .02 .72</ambient>
+            <diffuse>.92 .02 .02 .72</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="idmo_cache">
+      <static>false</static>
+      <pose>2.5 -10.0 0.01 0 0 0</pose>
+      <link name="cache">
+        <inertial>
+          <pose>0 0 .06 0 0 0</pose>
+          <mass>4.5</mass>
+          <inertia>
+            <ixx>0.0108</ixx>
+            <iyy>0.02355</iyy>
+            <izz>0.02355</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="body_collision">
+          <pose>0 0 0.06 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.22 0.12 0.12</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="body_visual">
+          <pose>0 0 0.06 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.22 0.12 0.12</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.12 .32 .72 1</ambient>
+            <diffuse>.12 .32 .72 1</diffuse>
+          </material>
+        </visual>
+        <collision name="handle_collision">
+          <pose>0 0 0.15 0 1.5707963267948966 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.02</radius>
+              <length>0.12</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="handle_visual">
+          <pose>0 0 0.15 0 1.5707963267948966 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.02</radius>
+              <length>0.12</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.08 .08 .10 1</ambient>
+            <diffuse>.08 .08 .10 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="idmo_control_panel">
+      <static>true</static>
+      <pose>-12.0 9.5 0.0 0 0 0</pose>
+      <link name="panel">
+        <collision name="panel_collision">
+          <pose>0 0 0.7 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.6 0.1 1.4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="panel_visual">
+          <pose>0 0 0.7 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.6 0.1 1.4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.56 .58 .60 1</ambient>
+            <diffuse>.56 .58 .60 1</diffuse>
+          </material>
+        </visual>
+        <visual name="drawer">
+          <pose>0 -0.066 1.08 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.42 0.03 0.22</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.18 .20 .22 1</ambient>
+            <diffuse>.18 .20 .22 1</diffuse>
+          </material>
+        </visual>
+        <visual name="button">
+          <pose>-0.18 -0.075 0.75 1.5707963267948966 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.035</radius>
+              <length>0.035</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.92 .58 .05 1</ambient>
+            <diffuse>.92 .58 .05 1</diffuse>
+          </material>
+        </visual>
+        <visual name="knob">
+          <pose>0.04 -0.085 0.75 1.5707963267948966 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.045</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.08 .12 .18 1</ambient>
+            <diffuse>.08 .12 .18 1</diffuse>
+          </material>
+        </visual>
+        <visual name="socket_pin_0">
+          <pose>0.16 -0.07 0.45 1.5707963267948966 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.012</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.08 .08 .08 1</ambient>
+            <diffuse>.08 .08 .08 1</diffuse>
+          </material>
+        </visual>
+        <visual name="socket_pin_1">
+          <pose>0.22 -0.07 0.49 1.5707963267948966 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.012</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.08 .08 .08 1</ambient>
+            <diffuse>.08 .08 .08 1</diffuse>
+          </material>
+        </visual>
+        <visual name="socket_pin_2">
+          <pose>0.28 -0.07 0.45 1.5707963267948966 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.012</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.08 .08 .08 1</ambient>
+            <diffuse>.08 .08 .08 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="abex_sampling_target">
+      <static>true</static>
+      <pose>-10.0 2.0 0.02 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.18</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.18</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>.10 .70 .30 1</ambient>
+            <diffuse>.10 .70 .30 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="north">
+      <static>true</static>
+      <pose>0 13.7 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>35.6 0.2 1.0</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>35.6 0.2 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.30 .26 .20 1</ambient>
+            <diffuse>.30 .26 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="south">
+      <static>true</static>
+      <pose>0 -13.7 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>35.6 0.2 1.0</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>35.6 0.2 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.30 .26 .20 1</ambient>
+            <diffuse>.30 .26 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="east">
+      <static>true</static>
+      <pose>17.7 0 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 27.6 1.0</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 27.6 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.30 .26 .20 1</ambient>
+            <diffuse>.30 .26 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="west">
+      <static>true</static>
+      <pose>-17.7 0 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 27.6 1.0</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+                <slip1>0.0</slip1>
+                <slip2>0.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 27.6 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.30 .26 .20 1</ambient>
+            <diffuse>.30 .26 .20 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

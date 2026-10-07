@@ -1,0 +1,6 @@
+torque  = 25 Nm
+Arm task : identify the idle position . so that the cg is not shifted . 
+there are six motors in the rover each in a wheel , so there are three batteries used . and each battey is set to max power consumption . 
+so that if all the motors need its own max power there will be no power constrain , 
+Arm DOF = 6 
+have to make sure of the wheel honeycomb structure physics 

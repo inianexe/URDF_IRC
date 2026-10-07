@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.8)
+project(rover_description)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY urdf meshes launch config rviz worlds DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/prepare_meshes.py scripts/check_irc_2026_compliance.py DESTINATION lib/${PROJECT_NAME})
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
+ament_package()

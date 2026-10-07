@@ -1,0 +1,45 @@
+Arena Dimensions & Macro Layout
+
+    Total Arena Footprint: The IRC finals arena (Sproscape) spans an outdoor simulated Martian landscape covering 20,000 m².   
+    International rover challenge
+
+    Traverse Range: Rovers must cover operational radii up to 500 meters away from the Base Station across undulating terrain.   
+    Team RoverX
+
+    Zoning: The floor plan isolates distinct mission zones (Autonomous, Astrobiology, Delivery, Servicing) with varied micro-terrains surrounded by spectator corridors and base station command tents.   
+    Team RoverX
+
+Soil & Granular Surface Composition
+
+    Quarry Fines & Silt Dust: Fine-grained, pulverized soil designed to emulate loose Martian regolith. It offers low shear strength, causing wheel sinkage, high rolling resistance, and dust kick-up near drive motors.
+
+    Loose Gravel & Scree Beds: Mixed aggregate layers consisting of 10 mm to 50 mm loose stones. Traversing these causes lateral tire slip, loss of odometry accuracy, and wheel spinning during acceleration.
+
+    Compacted Clay & Hardpack: Stabilized dirt paths situated near starting grids and servicing panels, providing high traction before suddenly transitioning into soft, loose soil.
+
+Rover chassis navigating crushed aggregate and gravel terrain, AI generated
+Rover chassis navigating crushed aggregate and gravel terrain. Source: Home Fashion Trends
+Topographical Formations & Elevation Profiles
+
+    Artificial Craters: Depressions ranging from 0.3 m to over 1.5 m in depth. Entering and exiting requires high motor torque and anti-roll stability to prevent tip-overs.
+
+    Mounds & Ridges: Earthwork hills featuring slopes from 15° to over 30°. These test passive chassis articulation (e.g., Rocker-Bogie or Differential Swivel mechanisms) to ensure all wheels remain in contact with the ground.
+
+    Rifts & Gullies: Steep-walled trenches cutting across navigation paths. These act as chassis traps and obscure line-of-sight for obstacle-detection sensors.
+
+Obstacle Density & Hazards
+
+    Boulder Fields: Unstructured distributions of rocks ranging from small cobbles (5–10 cm) to large boulders (30–60 cm).
+
+    Ground Clearance Traps: Underbody clearance of at least 20–25 cm is required to prevent the central electronics belly pan or differential linkage from high-centering on rocks.
+
+    Blind Drops: Abrupt drop-offs behind crests that require dynamic local path planning to prevent front-over rollovers.
+
+Incline slopes feature loose scree and rocky outcrops, AI generated
+Incline slopes feature loose scree and rocky outcrops. Source: Space
+Terrain Profile Breakdown by Mission Area
+Zone / Mission	Terrain & Surface Features	Primary Obstacles	Key Mobility Challenge
+Autonomous Navigation	Unstructured mixed terrain (dirt, gravel, loose rocks).	Elevated arrow markers (10–50 cm off ground) placed inside 2 m radius decision circles.	Navigating terrain mounds that obscure vision; maintaining wheel odometry on slipping gravel.
+Astrobiology Expedition (ABEx)	Stratified rock faces, loose sediment beds, undisturbed soil.	Incline approaches and fragile soil beds.	Driving up to target sites and drilling/scooping ≥10 cm deep without slipping or destabilizing.
+Reconnaissance & Delivery (RDO)	Open-field rough terrain extending up to 500 m out.	Hidden rifts, large boulders, terrain ridges blocking RF signals.	Payload stabilization over high-frequency bumps; long-range traversal.
+Equipment Servicing	Stabilized, semi-flat ground directly in front of the mock panel.	Slight ground incline or surface irregularities near panel base.	Preventing base movement or tire slippage while the robotic arm exerts push/pull forces.    

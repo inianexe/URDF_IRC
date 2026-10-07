@@ -1,0 +1,20 @@
+source: INRB_suspension_load_cf_circular_right.stl, isolated shell 0
+method: closed-mesh uniform-density volume integral plus centered cylindrical coupler
+  estimate
+deformation_modeled: false
+volume_m3: 0.0031889731903987388
+nonmanifold_edges: 159
+wheel_mass_kg: 3.694552
+coupler_mass_kg: 0.054917
+cad_com_offset_from_bbox_m:
+- 3.2904991872056964e-08
+- 2.1282611298042966e-09
+- -0.00030060130093373817
+reference_mass: 3.749469
+inertia:
+- 0.026295734345117113
+- -1.769585547221651e-10
+- 1.7931084141278732e-09
+- 0.03892169677792741
+- 4.835590806689982e-12
+- 0.02629577292415486

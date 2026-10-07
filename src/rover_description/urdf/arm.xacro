@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- PROVISIONAL 2-DOF upper-arm proxy, not original CAD kinematics. -->
+  <link name="arm_yaw_link">
+    <xacro:box_inertia mass="${p['arm_yaw_mass']}" x="0.10" y="0.10" z="0.06" xyz="0 0 0.03"/>
+    <visual><origin xyz="0 0 0.03"/><geometry><cylinder radius="0.05" length="0.06"/></geometry><material name="chassis_grey"/></visual>
+    <collision><origin xyz="0 0 0.03"/><geometry><cylinder radius="0.05" length="0.06"/></geometry></collision>
+  </link>
+  <joint name="arm_yaw_joint" type="revolute">
+    <parent link="base_link"/><child link="arm_yaw_link"/>
+    <origin xyz="0.22 -0.045 0.40"/><axis xyz="0 0 1"/>
+    <limit lower="${p['arm_yaw_lower']}" upper="${p['arm_yaw_upper']}" effort="40" velocity="0.4"/>
+    <dynamics damping="2" friction="0.1"/>
+  </joint>
+  <link name="arm_lift_link">
+    <visual><geometry><mesh filename="package://rover_description/meshes/arm_assembly.stl"/></geometry><material name="chassis_grey"/></visual>
+    <xacro:box_inertia mass="${p['arm_lift_mass']}" x="0.92" y="0.24" z="0.40" xyz="-0.04 -0.02 0.18"/>
+    <collision><origin xyz="-0.04 -0.02 0.18"/><geometry><box size="0.92 0.24 0.40"/></geometry></collision>
+  </link>
+  <joint name="arm_lift_joint" type="revolute">
+    <parent link="arm_yaw_link"/><child link="arm_lift_link"/>
+    <origin xyz="0 0 0.06"/><axis xyz="0 -1 0"/>
+    <limit lower="${p['arm_lift_lower']}" upper="${p['arm_lift_upper']}" effort="60" velocity="0.4"/>
+    <dynamics damping="3" friction="0.1"/>
+  </joint>
+  <xacro:if value="$(arg simulation)">
+    <gazebo>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>arm_yaw_joint</joint_name><topic>/arm/yaw/command</topic>
+        <p_gain>150</p_gain><i_gain>5</i_gain><d_gain>20</d_gain>
+        <i_max>5</i_max><i_min>-5</i_min><cmd_max>40</cmd_max><cmd_min>-40</cmd_min><initial_position>0</initial_position>
+      </plugin>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>arm_lift_joint</joint_name><topic>/arm/lift/command</topic>
+        <p_gain>200</p_gain><i_gain>10</i_gain><d_gain>25</d_gain>
+        <i_max>10</i_max><i_min>-10</i_min><cmd_max>60</cmd_max><cmd_min>-60</cmd_min><initial_position>0</initial_position>
+      </plugin>
+    </gazebo>
+  </xacro:if>
+</robot>

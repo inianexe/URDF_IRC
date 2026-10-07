@@ -1,0 +1,67 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Fixed Frame: map
+    Background Color: 35; 39; 45
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Metric grid
+      Enabled: true
+      Cell Size: 1
+      Plane Cell Count: 40
+      Alpha: 0.2
+    - Class: rviz_default_plugins/Map
+      Name: Cartographer live map
+      Enabled: true
+      Topic:
+        Value: /map
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+      Alpha: 0.85
+      Draw Behind: true
+    - Class: rviz_default_plugins/RobotModel
+      Name: IRC rover with articulated arm
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /robot_description
+        Durability Policy: Transient Local
+    - Class: rviz_default_plugins/LaserScan
+      Name: Live lidar
+      Enabled: true
+      Topic:
+        Value: /scan
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+      Size (m): 0.025
+      Color Transformer: FlatColor
+      Color: 255; 80; 40
+    - Class: rviz_default_plugins/TF
+      Name: TF tree
+      Enabled: false
+      Show Names: true
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Cartographer trajectory
+      Enabled: true
+      Topic:
+        Value: /trajectory_node_list
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 16
+      Pitch: 1.2
+      Yaw: 0.0
+      Focal Point: {X: 0.0, Y: 0.0, Z: 0.0}
+Window Geometry:
+  Width: 1400
+  Height: 900

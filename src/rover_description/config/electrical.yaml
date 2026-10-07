@@ -1,0 +1,20 @@
+# Source: Electrical_details.txt. Unknown motor/gearbox/electrical data are NOT invented.
+wheel_motor_count: 6
+battery_count: 3
+wheel_torque_limit_nm: 25.0
+torque_interpretation: provisional_per_wheel_output_shaft_cap_pending_confirmation
+battery_model: unconstrained_supply_not_simulated
+battery_assumption: sufficient_power_for_all_six_motors_as_requested_not_verified
+# Velocity-loop tuning and safety settings, not measured motor specifications.
+speed_kp: 5.0
+command_timeout_seconds: 0.8
+# Retains existing simulation speed cap; not inferred from 25 Nm.
+wheel_speed_limit_rad_s: 12.0
+voltage_v: null
+continuous_current_a: null
+peak_current_a: null
+gear_ratio: null
+gear_efficiency: null
+torque_speed_curve: null
+capacity_ah: null
+internal_resistance_ohm: null

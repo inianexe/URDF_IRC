@@ -1,0 +1,29 @@
+# Machine-readable hard limits and task-object dimensions transcribed from the
+# IRC 2026 rulebook.  This file is a design gate, not a substitute for rereading
+# the official rulebook and later clarifications.
+mass:
+  maximum_deployed_kg: 65.0
+  maximum_all_fielded_parts_kg: 85.0
+  penalty_percent_per_excess_kg: 10.0
+size:
+  maximum_length_m: 1.5
+  maximum_breadth_m: 1.2
+  oversize_mission_penalty_percent: 40.0
+operation:
+  maximum_base_distance_m: 500.0
+  mission_duration_minutes: 30.0
+  no_abort_points_before_minutes: 10.0
+  continuation_check_minutes: 20.0
+  minimum_score_percent_at_check: 30.0
+rado_objects:
+  maximum_mass_kg: 5.0
+  maximum_dimension_m: 0.40
+  maximum_grasp_diameter_m: 0.07
+idmo_cache:
+  maximum_mass_kg: 5.0
+  minimum_handle_length_m: 0.10
+  maximum_handle_diameter_m: 0.05
+  maximum_panel_height_m: 1.5
+abex_sample:
+  minimum_depth_m: 0.10
+  minimum_mass_kg: 0.010

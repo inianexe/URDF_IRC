@@ -1,0 +1,997 @@
+WWW.ROVERCHALLENGE.ORG   1
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+                                          PREFACE
+              Welcome o SPROS Inernaonal Rover Challenge - 2026
+The Space Robocs Sociey (SPROS) is pleased o presen he ocial rulebook or he SPROS
+Inernaonal Rover Challenge (IRC) 2026. The orhcoming edion will ake place rom 28
+January o 2 February 2026 in he coasal ciy o Udupi, Karnaaka, India.
+
+Since is incepon, he Inernaonal Rover Challenge has grown o become one o he leading
+plaorms or aspiring space engineers. Wih is inegraon ino he Inernaonal Space
+Robocs Week (SPROS Week), he compeon has expanded is oureach and impac,
+engaging over 1,000 sudens in is mos recen edion and consolidang is repuaon as he
+larges and mos dynamic even o is kind.
+
+The Sociey is parcularly delighed ha IRC reurns o Udupi, a region siuaed beween he
+Arabian Sea and he Wesern Ghas o Karnaaka. The 2019 edion, also hosed in Udupi is
+remembered as one o he mos successul in he compeon’s hisory, and we are conden
+ha he 2026 edion will build upon ha legacy.
+
+Inormed by he consrucve eedback o previous parcipans, his edion o he IRC
+inroduces several signican revisions and enhancemens. These improvemens are designed
+o srenghen he academic and praccal value o he compeon, and o urher is win
+objecves o osering innovaon and advancing experienal learning or sudens.
+
+In addion o he IRC, he SPROS Week will also include he Inernaonal Rover Design
+Challenge (IRDC) and he Inernaonal Space Drone Challenge (ISDC). For urher deails on
+hese relaed compeons, please visi:
+
+ISDC: www.roverchallenge.org/ISDC     IRDC: www.roverchallenge.org/IRDC
+
+The rulebooks or oher online evens, including he Mars Base Challenge, will be released in
+he second hal o Sepember 2025.
+
+Le us come ogeher o shape a Brigher, Open, Limiless and Developed (B.O.L.D.) uure
+hrough space advancemen.
+
+We exend our bes wishes o all parcipang eams and look orward o an exceponal IRC
+2026.
+
+Sagar Dhaka
+Even Direcor (IRC)
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                   2
+                     INTERNATIONAL ROVER CHALLENGE - 2026
+
+1.0 COMPETITION OVERVIEW
+1.1 COMPETITION OBJECTIVE
+
+SPROS Inernaonal Rover Challenge (IRC), also reerred o as “he challenge” or “he
+compeon,” is a leading space robocs engineering compeon. I challenges universiy
+sudens o concepualise, design, develop and operae asronau-assisve, nex-generaon
+space rovers.
+
+Compeng eams are required o demonsrae heir rover sysems hrough a series o
+mission-oriened asks conduced in a simulaed Maran errain. These asks are designed o
+es echnical compeence, innovaon, and problem-solving abilies crical o advancing
+uure space exploraon.
+
+The objecve o he compeon is o oer sudens a comprehensive, real-world
+inerdisciplinary engineering experience ha inegraes praccal engineering experse wih
+essenal sof skills, including business planning and projec managemen.
+
+The idea behind he compeon missions is o prepare humaniy or a uure scenario in which
+a second-sage Mars selemen (in-selemen habia) has already been esablished, and
+rovers are employed o suppor exploraon and enable is expansion ino a ully developed,
+pos-selemen habia. For a concepual illusraon o his vision, reerence may be made o
+he accompanying hypohecal scenario, se in he year 2X9X, depicng a uure Mars own.
+Mars’ Firs Human Habia - www.roverchallenge.org/SprosNagar
+
+
+
+1.2 COMPETITION PROCEDURE AND SCHEDULE
+
+The compeon is divided ino wo sages:
+• Qualiers (Online)
+• Finals (On-sie)
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                  3
+        INTERNATIONAL ROVER CHALLENGE - 2026
+
+
+
+
+                 Table 1.2 Poins Disribuon
+
+
+
+
+WWW.ROVERCHALLENGE.ORG                          4
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+1.2.1 Team Selecton Crieria
+
+All eams shall undergo a review and down-selecon process during he qualiers. Only he
+op 26 eams ha successully pass each milesone will be invied o parcipae in he on-sie
+nals.
+
+Deailed inormaon regarding deadlines, deliverable ormas, submission requiremens, and
+judges’ expecaons will be published on he ocial SPROS websie
+(www.spacerobocssociey.org) and he IRC websie (www.roverchallenge.org). These deails
+will also be communicaed direcly o he respecve eam leaders.
+
+A any sage o he milesone evaluaons, he ocials reserve he righ o reques claricaons
+or seek addional inormaon rom eams.
+
+Teams are sricly prohibied rom using drones during any IRC mission. However, eams
+engaged in he developmen o drone echnologies are encouraged o parcipae in anoher
+even o SPROS Week — he Inernaonal Space Drone Challenge (ISDC).
+
+Ou o he 26 nalis posions, hree shall be reserved or wildcard enries. Only non-Asian
+eams will be eligible o apply or hese wildcard slos. Teams seeking consideraon or a
+wildcard enry mus demonsrae heir readiness by presenng a live, working showcase o
+heir rover o he judging panel beore 1 December 2025.
+
+The maximum number o sudens permied in a eam or parcipaon in he nals is
+unresriced.
+
+1.2.2 Regisraton
+
+All eams mus ormally declare heir inen o parcipae in he compeon. The ocial
+regisraon orm will be made available online via he IRC websie rom 12 Sepember o 20
+Ocober 2025.
+
+No major deliverables are required a his sage, apar rom he submission o he eam deails
+requesed hrough he regisraon poral. Inormaon regarding he regisraon ees or boh
+he qualiers and he nals will be published on he IRC websie.
+
+Early Bird Oer: Teams ha regiser and complee paymen or he compeon beore 26
+Sepember 2025 shall be eligible or a discoun on he regisraon ee or he nals.
+
+1.2.3 Awards and Honours
+
+• Grand Awards: These are presened o he IRC's op hree eams, i.e., he Champion, Firs
+  Runner Up, and Second Runner Up.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    5
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• Asrobiology Poser Presenaon Awards: These are presened o he bes-perorming
+  individuals or eams in he Asrobiology Poser Presenaon.
+
+• Emerging Team o he Year: This is presened o he eam ha has made he mos
+  signican progress. Only eams ha have recenly been ormed will be eligible or his
+  award.
+
+•   Mission Awards: These honours will be given o eams or heir creave hinking in a
+    specic subsysem and ousanding perormance in any o he compeon missions. This
+    caegory also includes he PIMA, BPP, and Exhibion awards.
+
+•   Depending on he judges’ verdic, addional caegories o awards may be conerred. This
+    lis only serves as an example o he prizes given ou in prior IRC evens.
+
+
+
+1.2.4 Sysem Design and Developmen Review (SDDR)
+
+All eams shall submi a Sysem Design and Developmen Review (SDDR) package no laer han
+20 November 2025, comprising a wrien repor and a video componen, addressing boh
+echnical and projec managemen dimensions o rover developmen.
+
+The projec managemen secon shall include: eam organisaonal srucure, resource
+managemen, projec planning, a PERT char depicng he projec meline and dependencies,
+inial budge, undraising plans, sponsorships, eam recruimen processes, and educaon
+and public oureach acvies.
+
+The echnical secon shall include: curren rover developmen saus and prooypes, overall
+sysem archiecure and design, science sraegy, and prooype esng sraegy wih
+vericaon approaches and milesones.
+
+The video componen shall be a 5-minue presenaon highlighng salien eaures o he
+rover design and is readiness or mission asks, succincly evidencing inegraon and esng
+progress.
+
+The op 26 eams shall advance o he on-sie nals on he basis o heir SDDR scores, wih no
+scores rom he qualiers carried over o he nals; all seleced eams mus conrm heir
+parcipaon by 5 December 2025, ailing which he place may be oreied and oered o he
+highes-ranked reserve eam.
+
+Compeon Daes - IRC nals will be held rom 28 January o 2 February 2026 in Udupi,
+Karnaaka, India.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                   6
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+The ees do no include he cos o ravel or accommodaon; parcipang eams are
+responsible or arranging and unding heir own ravel and lodging. Teams are srongly advised
+o secure accommodaon and ransporaon promply upon receiving he SDDR resul, as he
+Coasal Karnaaka region is a popular ouris desnaon and February consues peak season.
+
+Noe: Any change o he daes, venue, or rules o he nals, or any reason, will be
+communicaed o all eams, and all such decisions res solely a he discreon o he IRC
+organising eam.
+
+
+
+
+                           Figure 1.2.4 KAUP, UDUPI, KARNATAKA
+
+
+
+1.3 ADMINISTRATIVE REGULATIONS
+1.3.1 Competton Informaton
+
+The compeon-specic rules and relevan inormaon are dened in his rulebook, and he
+specic guidelines issued separaely or various submissions/missions will be available on he
+compeon websie. All he quesons in he FAQ secon on he IRC websie will also be
+considered par o he rules and guidelines. In addion, any ocial announcemen shall also
+be considered par o hese rules. Any issues no covered by hese published rule ses will be
+addressed on a case-by-case basis by he IRC ocials. I here is a discrepancy, he Rulebook
+(his documen) will ake precedence over FAQs. The rules are designed o be as clear and
+specic as possible, bu here may sll be occasional errors or ambiguies. In hese cases, he
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    7
+                  INTERNATIONAL ROVER CHALLENGE - 2026
+
+spiri o he rules akes precedence over he exac wording. The key terms "MUST", "MUST NOT",
+"REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as specified in RFC 2119, regardless of
+capitalisation.
+
+1.3.2 Queries Regarding he Rules
+
+Queries regarding any rules or guidelines should be direced o he ocials via email
+(irc@roverchallenge.org). The requenly asked quesons (FAQ) secon on he compeon
+websie mus be checked beore submitng a queson. The ocials will only answer quesons
+ha are no already answered in he rules or FAQs or ha require new or novel inerpreaons.
+No response will be provided o email addresses oher han he designaed conac poin, as
+hese emails will be considered spam. The ocial language o he compeon is English.
+
+All ocial communicaons will be sen only o he regisered eam email or he eam leader’s
+email address. Teams mus check his inbox regularly, including spam/junk olders, o ensure
+no updaes or noces rom he organiser are missed.
+
+1.3.3 General Oﬃcials Auhoriy
+
+The ocials reserve he righ o revise he schedule o he compeon and/or inerpre or
+modiy he compeon rules a any me and in any manner ha is, in heir sole judgmen,
+required or sae, air, and ecien operaon. Thereore, all eam members are required o
+cooperae wih and ollow all insrucons rom he ocials.
+
+The judges have he auhoriy o reschedule i unexpeced evens, like rain, occur, causing a
+delay or cancellaon o a compeon day. Teams mus be prepared o parcipae in mulple
+missions in a day. I, despie a reschedule, i is no possible o complee all he asks or all he
+eams due o me consrains or organising dicules, hose asks will no coun owards he
+overall scores. I is imporan o noe ha eams sll able o perorm will receive a score o
+assess heir perormance, bu i will no conribue o heir poins. I all eld missions are
+cancelled, winners will be deermined based on assessmens and SDDR scores. This is he only
+scenario in which SDDR scores will be considered in he nals. Any issues wih he rover or
+eam absence (whaever may be he reasons) will no be valid reasons o reschedule asks.
+
+1.3.4 Oﬃcial Insructons
+
+Failure o a eam member o ollow an insrucon or command explicily direced o ha eam
+and/or member will resul in a 20-poin penaly, which will be deduced rom heir overall
+score. Mulple ailures o ollow an insrucon may lead o disqualicaon o he member or
+he eam rom he compeon.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                          8
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+
+
+1.3.5 Conduc wih Oﬃcials
+
+Argumens wih or disobedience o any ocial will resul in he eam being eliminaed rom
+he compeon.
+
+1.3.6 Unehical Conduc
+
+In case o unehical conduc by a eam member, a 20-poin penaly will be deduced rom he
+eam’s overall score. A second violaon will resul in he expulsion o ha member and his/her
+eam rom he compeon.
+
+1.3.7 Appeal
+
+During he mission, eams may clear heir doubs and seek claricaons only rom he
+designaed eld judge. Once he mission has been concluded rom he eld judge’s side, no
+urher ineracon wih hem is permied. Should any issue remain unresolved, a ormal
+appeal may be submied exclusively o he Arbiraor. Such appeals may relae o maers o
+scoring, judging, policies, or he inerpreaon and applicaon o rules conained wihin he
+Rulebook.
+
+Appeals mus be submied in wring via email o he arbiraor’s designaed address (o be
+provided a he nals) wihin 30 minues o he compleon o he mission. Only appeals
+direcly relaed o rules or ocial policies will be considered. Complains concerning me
+delays, loss o communicaon, scheduling, ask repeon, or any maer no governed by he
+Rulebook shall no be enerained. Each appeal mus include comprehensive deails ogeher
+wih all supporng maerial available o he eam. The ocials’ wrien decision shall be nal
+and binding, and no urher proess on he same maer will be acceped.
+
+The eam leader and aculy advisor shall be he only represenaves auhorised o inerac
+wih he judges, ocials, and arbiraors in he maer o appeal, and under no circumsances
+may any oher eam member be appoined or permied o ac in his capaciy. I any oher
+member does so, a penaly o 20 poins will be deduced rom he eam’s overall score.
+Mulple violaons may resul in disqualicaon o he eam or he member rom he
+compeon.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    9
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+1.4 GENERAL REQUIREMENTS FOR TEAMS & PARTICIPANTS
+1.4.1 Teams per Universiy
+
+There is no limi o he number o eams a universiy can send o he compeon. Teams ha
+are ormed wih members rom wo or more universies are reaed as a single eam. I is up
+o he members o decide i hey wan o represen one universiy or compee independenly.
+Represenng more han one universiy is no allowed.
+
+1.4.2 Team Members
+
+A person can be a par o only one eam. Each eam mus have one eam member idened
+as heir eam leader/capain. The eam leader/capain is he main poin o conac or he
+ocials during he regisraon process and compeon.
+
+
+1.4.3 Suden Saus
+
+Team members mus be enrolled as degree-seeking undergraduae or graduae sudens in
+any universiy. Team members who have graduaed beore he compeon are ineligible o
+parcipae.
+
+Sudens seeking a PhD degree/PhD sudens or equivalen are no allowed o parcipae.
+
+1.4.4 Age
+
+Team members mus be a leas 18 years o age. Wrien permission rom he ocial guardian
+should be provided or members below he age o 18 years on January 1 o he year o he
+nals.
+
+1.5 FINANCES
+
+The maximum allowable cash budge ha a eam can spend on he projec is 20,00,000 INR.
+I shall include componens or he rover, rover module, rover power source, rover
+communicaon equipmen, and rover base saon equipmen. Teams are encouraged o ge
+nancial and in-kind sponsorships and donaons or heir projec. Teams should menon he
+sponsorship amoun and donaons in heir SDDR.
+
+1.6 DOCUMENTATION & SUBMISSION DEADLINES
+1.6.1 Submission
+
+Submied documens may only be viewed by members o he submitng eam, auhorised
+judges, and ocials. The ocial websie o he compeon will be used or all online
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                10
+                  INTERNATIONAL ROVER CHALLENGE - 2026
+
+submissions. By submitng documens via he compeon websie, he eam agrees ha
+hese documens may be reproduced and disribued by he ocials, in boh complee and
+edied versions, or educaonal and markeng purposes. Teams should check he compeon
+websie regularly o keep rack o he submission deadlines.
+
+1.7 GENERAL RULES
+1.7.1 Forfei for Non-Appearance
+
+I is he responsibiliy o each eam o be presen a he compeon sie wih heir rover a heir
+scheduled meslo, which will be communicaed o hem beorehand by he organisers. I a
+eam is no presen and ready o compee a he scheduled me, i oreis is aemp a ha
+mission/ask and will be scored zero or ha ask.
+
+
+1.7.2 Team Brieﬁng
+
+All eam leaders/capains mus aend he eam brieng or ha day. I any specic doubs are
+here regarding he mission, hey can be cleared during he brieng. No doubs or claricaons
+will be enerained once he mission me has begun.
+
+1.8 ROVER OPERATIONS
+
+• Teams shall operae heir rovers wirelessly rom designaed base saons, which will be
+  isolaed o block he operaors’ direc visibiliy o he compeon sie and he rover. These
+  base saons may be ens or concree rooms. Basic Indian-syle power oules (220V,
+  50Hz), ables, and chairs shall be provided.
+
+• Teams shall operae heir rovers remoely wih no me delay, ulising live video eeds rom
+  onboard cameras, engineering elemery or navigaon, and addional sensors or
+  siuaonal awareness and conrol; wih or wihou a direc line-o-sigh radio
+  communicaon o he rover. The use o public cellular neworks (4G/5G), wireless inerne,
+  or saellie inerne is prohibied. Rovers are expeced o ravel a maximum disance o 500
+  meers rom he base saon.
+
+• The complee communicaon seup, including anennas, compuers, wires, and more, is
+  enrely he responsibiliy o he parcipang eam. While hese componens are no par
+  o he rover isel, hey are considered inegral o he overall sysem design.
+
+• Teams are allowed o place heir communicaon anenna wihin 3 meres in ron o he
+  base saon o opmise signal qualiy, including achieving line-o-sigh when possible.
+  Teams mus be prepared o operae in boh line-o-sigh and non-line-o-sigh condions,
+  as in rare cases due o physical eaures line o sigh communicaon migh no be available.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                      11
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• All he compeon evens will be held in ull dayligh or under adequae arcial ligh.
+
+• The GPS coordinaes provided shall adhere o he WGS 84 daum sandard. The orma or
+  he same will be laude/longiude in decimal degrees.
+
+• Tesng will no be allowed a he sie during or beore IRC-2026.
+
+
+
+
+2.0 ROVER GUIDELINES
+2.1 FACULTY ADVISOR ROLE
+
+• The rover parcipang in he compeon mus be designed and buil enrely by he
+  suden eam members wihou direc involvemen rom aculy advisors and indusry
+  proessionals.
+
+• The role o aculy advisor/coordinaor/supervisor will be limied o menorship and
+  guidance. He / She may no make design decisions.
+
+• Sudens should perorm manuacuring and abricaon asks hemselves as much as
+  possible. For cases where in-house manuacuring and abricaon are no possible, eams
+  can approach conracors, bu he amoun charged will be considered in he eam budge.
+
+• Each eam is expeced and encouraged o have a leas one and a maximum o wo Faculy
+  Advisors appoined by he college/universiy. The aculy advisor/s will be considered by
+  compeon ocials o be he ocial universiy represenave accompanying he eam.
+  Their presence during he compeon is recommended or all he even days on-sie.
+
+2.2 SIZE, WEIGHT, AND DESIGN
+
+• The rover shall be a sand-alone, o-he-grid, mobile plaorm. Tehered power and
+  communicaons are no allowed. A single, sel-conained rover plaorm mus cross he
+  designaed sar line as one conneced uni.
+
+• The maximum allowable mass o he rover when deployed or any compeon mission is
+  65kg. The oal mass o all elded rover pars or all evens is 85 kg. For example, a modular
+  rover may have a roboc arm and a sensor ha are never on he rover a he same me.
+  The rover plus arm and rover plus sensor combinaons mus each be under 65 kg, bu he
+  oal rover plus arm plus sensor mus be less han 85 kg. The limiaons on he rover’s
+  weigh do no include any spares or ools ha may be required o build or mainain he
+  rover. I he rover is overweigh during a mission, he eam will be charged a penaly o
+  10% o he poins scored or every kilogram over 65kg.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                     12
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• The maximum allowable lengh and breadh o he rover are 1.5m and 1.2m, respecvely.
+  There is no vercal heigh limi or IRC 2026. I he rover is oversized during a mission, he
+  eam will be charged a penaly o 40% o he poins scored during ha mission.
+
+• The rovers mus use power sysems ha may be applicable on Mars. Baery-powered
+  sysems can only be used or he rovers. Any poenal hazardous maerial will require
+  proper documenaon o be submied o he organisers beore he compeon.
+
+• All rovers mus be equipped wih a "kill swich" placed on he exerior o he rover. The kill
+  swich should be accessible and visible a all mes. This swich mus be able o cease any
+  movemen by he rover and wihdraw all power rom he baeries in case o an emergency.
+
+
+
+
+                                  Figure 2.2 Rover Dimensions
+
+
+2.3 COMMUNICATION EQUIPMENT
+• Teams shall operae heir rovers wirelessly rom designaed base saons, which will be
+  isolaed o block he operaors’ direc visibiliy o he compeon sie and he rover. These
+  base saons may be ens or concree rooms. Basic Indian-syle power oules (220V,
+  50Hz), ables, and chairs shall be provided.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                     13
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• Teams mus urn o heir communicaon equipmen a he even sies when hey are no
+  compeng o preven inererence wih oher eams. Beore swiching on any
+  communicaon equipmen, eams mus rs obain permission rom he eld judge. Any
+  eam ha is ound in violaon o his guideline shall ace a penaly ha enails a reducon
+  o heir maximum mission me by 50 percen.
+
+• Boh omnidireconal and direconal anennae are allowed, bu communicaons
+  equipmen mus no rely on he eam’s abiliy o wach and rack he rover rshand.
+  Seered direconal anennae may use a mechanised anenna mouned ouside ha is
+  conrolled via an elecronic signal rom he command saon. Signal srengh, relayed GPS,
+  or oher sraegies may be used o give eedback on anenna direcon, bu i is no allowed
+  o moun a camera on op o he anenna or visual eedback. I eams are using a
+  direconal anenna, i mus always be poined away rom he compeon area when no
+  compeng.
+
+• Base saon anenna heigh is limied o 3 meres and shall adhere o all applicable
+  regulaons. Anenna mus be locaed wihin 3-mere arc o he eam’s command saon.
+
+• Any ropes or wires used or sabiliy o anenna only may be anchored wihin 3 meers o
+  he command saon.
+
+• The design and reliabiliy o communicaon sysems orm an inegral par o his
+  compeon. Teams are expeced o approach i as a core challenge, demonsrang
+  innovaon, resilience, and adapabiliy in heir sysems. The compeon environmen
+  isel is deliberaely demanding, designed o es how well eams can develop and operae
+  robus communicaon links. No eam will be permied o cie inererence as grounds or
+  complain. Missions will no be paused, repeaed, or delayed o ensure an
+  inererence-ree environmen. Designing communicaon sysems ha can wihsand
+  inererence is a core par o he compeon challenge.
+
+• Each eam is solely responsible or esablishing and mainaining is own communicaon
+  link.
+
+• The organisers will no allocae or manage communicaon channels.
+
+• Teams have complee reedom o selec channels wihin he permied specrum,
+  encouraging innovave approaches o communicaon sysem design.
+
+• Only unlicensed requency bands, as designaed by he Deparmen o
+  Telecommunicaons (India), may be used. I a eam chooses o operae ouside hese
+  bands, i is heir responsibiliy o obain he necessary licence.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    14
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• The compeon venue will be a congesed RF environmen, wih mulple eams likely
+  ransmitng simulaneously.
+
+• All communicaon sysems mus be capable o assessing he RF environmen beore
+  ransmitng. Occupied requencies should be avoided, and sysems should dynamically
+  selec he cleares available channels.
+
+• Auomac or manual swiching beween requency bands is required, allowing sysems o
+  adap quickly in he even o inererence (including inererence rom unauhorised or
+  innocen hird-pary ransmissions).
+
+• Teams should careully accoun or he dense RF environmen expeced during he nals.
+  Encrypon and migaon echniques mus be incorporaed ino sysem design, ensuring
+  reliable and secure links.
+
+• Non overlapping channels, parcularly wihin he 5.8 GHz band, are srongly
+  recommended as hey ypically experience less congeson.
+
+• Obaining an amaeur (ham) radio licence is encouraged, as i may provide addional
+  resilience in communicaons.
+
+• Each eam mus submi a ormal declaraon o he communicaon sandards, requency
+  bands, and channels hey inend o use by 5 December 2025. During he nals, he
+  organisers will acvely monior he requency specrum, and any eam ound operang in
+  a manner inconsisen wih heir declared specicaons will ace immediae
+  disqualicaon.
+
+
+
+
+3.0 COMPETITION MISSIONS (FINALS)
+
+• The IRC nals are divided ino hree caegories – Expedions, Operaons, and
+  Assessmens.
+
+• Expedions are missions ha are invesgaory in naure and or which eams shall presen
+  he ndings and resuls o he judges afer he compleon o he mission. Expedions
+  conain boh dynamic and sac componens.
+
+• Operaons are he missions ha conain only dynamic componens and in which he rover
+  has o perorm specic asks in he eld.
+
+• Assessmens are missions ha are sac in naure like Projec Implemenaon and
+  Managemen Assessmen (PIMA) and Business and Parnership Plan (BPP).
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                15
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+• For each mission, he eam mus arrive a he respecve base saon a leas 30 minues
+  beore he scheduled slo or preliminary rover checks and he mission brieng. I he eam
+  is lae, me would be deduced rom heir mission me o 30 minues.
+
+• The eams should design heir rover so ha i can be saely carried by wo members over
+  shor disances during he missions wih lile risk o injury.
+
+• Teams will ge a maximum me o 30 minues o complee a eld mission.
+
+• Teams are eligible o aemp bonus asks only afer compleng 15 minues o he mission
+  me.
+
+• During he eld missions, i a rover does no score any poins wihin he rs 10 minues,
+  he mission will be abored.
+
+• Only he eams which score more han 30% poins (wihou including bonus poins) during
+  he rs 20 minues o a parcular mission are allowed o ulise he enre mission me o
+  30 minues. The eams ha score less han 30% poins will have o sop heir mission afer
+  20 minues.
+
+• All he penales are addive: e.g. penales o 10% and 20% would resul in a score o 70%
+  o he poins earned during ha parcular mission. All he missions are scored
+  independenly, and i is no possible o score less han zero in a mission.
+
+• Beore he sar o he mission, eams will ge 10 minues as he seup me o se up all
+  necessary sysems and equipmen a he base saon. Upon mission compleon, radio
+  communicaon equipmen mus be powered down immediaely. Teams hen have 5
+  minues o pack up and vacae he base saon.
+
+• A maximum o 5 eam members may serve as operaors a he base saon, and up o 2
+  addional eam members may serve as runners accompanying he rover wihin he
+  compeon eld. Any oher eam member is considered a specaor. Specaors are no
+  permied o ener he compeon eld a any me, including during seup.
+
+• The rover is no required o be in he same conguraon during he enre compeon.
+  Teams can change he conguraon o he rover according o heir needs and mission
+  requiremens. The rover will be accessible o he eams hroughou he compeon, and
+  eams can make modicaons and repairs beween he missions.
+
+• Any area or objec wihin he compeon eld ha is marked in red will be considered a
+  conaminaed area and reaed as a no-go zone. I he rover eners his area, a penaly o
+  10% o he poins awarded or ha mission will apply. Mulple violaons will incur mulple
+  penales. No-go zones may include anyhing such as red-coloured rock or a red rac cone.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                  16
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+3.1 INTERVENTIONS
+
+An inervenon can be called when a crical error hinders regular rover operaon during a
+mission. However, he ollowing se o guidelines is o be ollowed o service an inervenon
+call.
+
+• The eams can ake a maximum o 4 inervenons during he IRC nals. The eams are
+  allowed o reques a maximum o 2 inervenons during a parcular mission. However,
+  each inervenon will incur a 20% penaly on he oal poins earned in ha mission. As a
+  resul, mulple inervenons can lead o cumulave penales. Upon requesng a second
+  inervenon during a mission, he eam shall resar he mission/sage rom he designaed
+  sar line. Afer he resar, he rover may aemp only hose sub-asks ha remain
+  pending. Repeang sub-asks already compleed will no yield addional poins. The
+  mission clock connues o run hroughou any inervenon.
+
+• A reques or inervenon can only be iniaed by eam members (operaors) who are
+  presen a he base saon. To reques inervenon, operaor mus ener he inervenon
+  circle locaed ouside he base saon and inorm he eld judge. The operaors who leave
+  he base saon o repair he rover will no be permied o re-ener he base saon.
+
+• Any eam member no designaed as an operaor or runner is deemed a specaor and
+  mus no inerere wih rover operaons during missions, no communicaon (verbal or
+  nonverbal) is permied beween specaors and base-saon operaors or runners, all
+  spare pars and repair ools required or inervenons mus be wih he runners or
+  operaors beore mission sar, and once he mission begins no movemen o personnel,
+  equipmen, or ools is permied ino or ou o he mission area.
+
+• A maximum o 5 eam members may ac as operaors a he base saon, and up o 2
+  addional eam members may serve as runners accompanying he rover wihin he
+  compeon eld. Anyone else shall be considered a specaor.
+
+• Runners mus mainain a leas 5 meres o disance rom he rover during normal
+  operaons and mus no appear in any rover-mouned camera view. Runners shall no
+  indulge any acon ha obsrucs sensors, inereres wih navigaon, or inuences ask
+  execuon. Their main responsibiliy is o use he kill swich in an emergency. During
+  inervenon mes, runners may also assis in repairing he rover.
+
+• Teams mus no change he rover's posion during he inervenon. Afer compleng he
+  inervenon, he rover mus be precisely a is pre-inervenon posion and orienaon.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                   17
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+3.1.1 Sproscape
+
+• The IRC 2026 nals will be perormed wihin a specially designed simulaed landscape
+  called Sproscape.
+
+• I will be one-o-he world’s larges arena o is kind. I will incorporae numerous
+  opographical elemens, such as craers, mouns, rocky gardens, rifs, quarry nes, ec.
+  Base saons will be siuaed eiher along he edges o he Sproscape or a some disance
+  rom i o ensure unhindered rover operaons.
+
+
+
+
+                               Figure 3.1.1 Sproscape, IRC 2023
+
+
+3.2 ASTROBIOLOGY EXPEDITION (ABEx)
+
+In his mission, he rover will serve as a mobile science laboraory o collec samples rom
+designaed sies and conduc basic scienc evaluaons o hese samples using a careully
+designed se o ess and experimens. The objecve is o ideny and characerise he sies
+or heir capabilies o suppor microbial lie and seek signs o exnc or exan lie in hose
+sies. The rover may use cameras or oher passive insrumens o invesgae he designaed
+area and collec samples using mechanical mehods. The rover mus be equipped wih a leas
+one insrumen or assay capable o deecng lie, chosen by he eam. The rover mus analyse
+samples using onboard insrumens and collec a leas one unconaminaed sample in a
+sealed, cached conainer or ube. The rover will drop his sample a a designaed locaon or
+uure rerieval during he Reconnaissance and Auonomous Delivery Mission, so i should be
+designed wih he abiliy o rerieve he sample (cached conainer or ube) in mind. All
+insrumens and ess mus be conduced onboard he rover, as here will be no laboraory
+analysis a he base saon.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    18
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+One monh beore he IRC nals, qualied eams will have o submi a poser presenaon or
+heir Science Plan o he judges. The submission dae and orma will be inormed o he
+eams. The eams will have o presen his o he judges hrough a recorded video. Teams may
+nominae a maximum o hree members o be par o he poser presenaon, as here will be
+individual awards up or grabs. Teams may nominae up o hree members or he poser
+presenaon. These preseners will be eligible or individual poser presenaon awards.
+
+•   During he nals, eams will be collecng daa o scienc relevance in he conex o he
+    Maran biosphere, and he rover mus have he abiliy o selec, collec, and analyse
+    (invesgae) samples rom mulple sies.
+
+•   Teams shall documen each seleced sie by invesgang i using a wide-angle panorama
+    o a minimum 1:3 heigh-o-widh rao showing he ull conex o he sie. The panorama
+    mus indicae cardinal direcons and scale, GPS coordinaes o each sie, elevaon, and
+    accuracy range. Thorough documenaon is especially crucial or he sample ha is o be
+    rerieved.
+
+•   Provide a close-up, well-ocused, high-resoluon phoograph o he sampling sie wih a
+    clear indicaon o scale, which may be added afer capure.
+
+•   Based upon he invesgaon o he seleced sies, eams shall hen collec and sore a
+    subsurace soil sample rom a deph o 10 cm or deeper. Sample(s) mus be a leas 10g
+    and may consis o a single rock, loose soil, or anyhing in beween.
+
+•   The eams should conduc hese analyses on boh soil and amosphere: sub-surace
+    emperaure, humidiy, pH, and amospheric pressure. The eams can do oher analyses
+    depending on heir choice. Teams should conduc only hose ess and analyses ha
+    provide conclusive resuls in he alloed mission me o 30 minues.
+
+
+
+
+                              Figure 3.2 Wide-Angle Panorama
+
+• Any chemicals used on-board, including waer and oher chemical producs, mus ollow a
+  no-spill policy and should no spill on he ground during he mission. In addion, he use
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                   19
+                  INTERNATIONAL ROVER CHALLENGE - 2026
+
+     o hazardous chemicals mus be pre-approved beore he compeon by submitng a
+     usage plan, ransporaon, saey precauons, and acciden plan.
+
+• Teams mus submi heir analysis and ndings o he judges in he orm o an AbEx Mission
+  Repor wihin 30 minues afer compleng he mission. The repor should include he
+  resuls o on-board rover ess, along wih relevan daa and images. Submissions mus be
+  made in boh digial and hard copy ormas. The repor should no exceed 5 pages in
+  lengh, excluding any picures aken during he mission. Teams should prepare he repor
+  in advance and only need o add daa, ndings, and picures rom he mission aferward.
+  There is no requiremen or eams o presen his repor o he judges.
+
+• The mission repor submission is allowed even i he rover was unsuccessul in perorming
+  any o he eld asks. The repor should include:
+
+ •     Resuls o on-board rover and laboraory ess perormed.
+
+ •     Mehod used o ensure he sample was colleced a leas 10 cm below he surace and
+       sealed wihou conaminaon in a ube/cache conainer.
+
+ •     Reasoning or sample sie selecon and documenaon o he sies. Meaning o daa
+       colleced wih respec o he habiabiliy poenal, he geology o he sie (pas and
+       presen), and implicaons o he sie being suiable or lie.
+
+ •     Scienc knowledge o Mars based on responses o judges’ quesons.
+
+The score or his ask will be based on he ollowing componens:
+
+ •     Thoroughness o he invesgaon o sies (panoramas, sie selecon, sragraphic
+       prole).
+
+ •     Qualiy and applicabiliy o he onboard and laboraory analysis (moisure, emperaure,
+       science capabiliy o choice).
+
+ •     Qualiy o he sample/s colleced (weigh, deph, possible conaminaon).
+
+ •     Scienc knowledge o asrobiology.
+
+
+
+3.3 RECONNAISSANCE AND AUTONOMOUS DELIVERY OPERATION (RADO)
+
+In his mission, rovers shall be required o conduc reconnaissance operaon over errain no
+more han 500 mere away rom he base saon. The rover will search, locae, pick up, and
+deliver objecs o specic locaons (GPS coordinaes) and/or pick up and sore objecs unl
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                    20
+                   INTERNATIONAL ROVER CHALLENGE - 2026
+
+he mission’s end o deliver hem o he base saon. The objecs will be scaered over he
+eld. Hence, his ask will require he rover o have a sorage aciliy and an arm or assisance.
+
+3.3.1 Reconnaissance
+
+In his sage, he rover will have a maximum o 10 minues o reconnaissance hrough an area
+o search and locae various objecs around he compeon sie. Teams shall documen each
+locaed objec by aking is phoograph and he GPS coordinaes o is locaon. The eam may
+choose o pick up and sore any one objec o is choice during his sage (No o be delivered
+in his sage). The rover may carry a mos one objec in is sorage cache (carrying an objec
+by gripping will no be allowed) during his sage. The remaining me a he end o his sage
+will no be added o he ollowing sage, which will begin immediaely afer his sage.
+
+3.3.2 Auonomous Delivery
+
+A his sage, he rover will have 20 minues o pick up objecs and deliver hem o designaed
+locaons. The rover can use a gripper or oher mechanisms or he delivery o objecs. While
+objec pickup does no need o be perormed auonomously, he delivery mus be compleed
+auonomously o earn ull poins. Teams are required o noy he judges each me hey ener
+auonomous mode. I a eam chooses o perorm he delivery non-auonomously, hey will
+only receive 50% o he poins or each sub-ask relaed o he delivery o objecs o he
+required locaons. Teams mus communicae heir choice regarding he delivery mode
+(auonomous or non-auonomous) beore he nals.
+
+In auonomous mode, eam members may monior video and elemery inormaon sen
+rom he rover bu may no ransmi any commands. No scoung will be allowed beore he
+sar o his mission.
+
+•    Objecs will include small, lighweigh hand ools (e.g., screwdriver, hammer, wrench),
+     supply conainers (e.g., oolbox), or rocks up o 5 kg in mass. All iems will be graspable,
+     wih diameers no greaer han 7 cm. The maximum dimensions will be 40 cm x 40 cm x 40
+     cm, bu eams should expec a variey o sizes and weighs. The errain will vary rom sof
+     sandy surace o rough sony errain and may conain rocks and boulders, vercal drops,
+     sand dunes, and slopes. The diculy o he ask will increase wih urher levels.
+
+•    Approximae GPS coordinaes or colours o he markers will be provided or all he delivery
+     locaons, alhough accuracy may vary. The rover can ake any sequence/pah i wans.
+     However, cerain sequences or pars o he errain may be compulsory o complee he
+     mission, and he same inormaon will be provided beorehand. In addion, he
+     insrucons regarding he markers’ colour and he objecs (i necessary) will be provided
+     in advance.
+
+
+
+
+    WWW.ROVERCHALLENGE.ORG                                                                    21
+                     INTERNATIONAL ROVER CHALLENGE - 2026
+
+•    Teams will be scored based on heir abiliy o search, locae, and deliver/sore he correc
+     objecs rom/o he correc locaons and based on he proximiy o he objec placed o
+     he objecve wihin he specied me.
+
+•    The picures o he objecs will be shared wih he eams beore he nals.
+
+
+
+3.4 INSTRUMENT DEPLOYMENT AND MAINTENANCE OPERATION (IDMO)
+
+This mission will be divided ino wo sages, Insrumen Deploymen and Insrumen
+Mainenance. The rover is expeced o raverse a shor disance o operae on a mock-up
+insrumen panel o perorm a se o precise mainenance and deploymen operaons. The
+rover will have o use roboc manipulaors o carry ou his mission.
+
+The mission may include mulple operaons. The provided lis is no exhausve, and he
+mission may include operaons similar o hose menoned below. Teams mus be ready or
+cerain exibilies.
+
+3.4.1 Insrumen Mainenance
+
+•    Picking up a cache and raversing o he panel. The cache will have a handle o a leas 10
+     cm in lengh and no more han 5 cm in diameer. The cache will weigh less han 5 kg.
+
+•    Open a drawer o place he cache inside i and close he drawer.
+
+•    Push buons, ip swiches, urn knobs.
+
+•    Operae a joysck.
+
+•    Undo laches.
+
+•    Open panels.
+
+•    Connec an elecric hree-pin plug o a sandard hree-pin socke.
+
+3.4.2 Deploymen
+
+The deploymen leg o his mission will require eams o rerieve and carry sample cache
+componens or deploymen in parcular designaed locaons near he collecon panel. The
+cache(s) may have o be deployed in a parcular paern/orienaon, deails o which will be
+provided a he compeon sie isel. The cache componens will consis o sandard
+graspable eaures such as handles, ropes, ec.
+
+
+
+
+    WWW.ROVERCHALLENGE.ORG                                                                   22
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+Afer he deploymen o he componens, he rover has o read cerain codes/paerns/ex
+displayed on or near he panel or on any o he componens ha are being deployed. This code
+needs o be noed by he base saon eam using he ransmied video eed.
+
+The deploymen leg will be considered compleed only afer correcly placing he cache(s) in
+designaed spos and he correc submission o he code o he judges by he base saon
+eam.
+
+The maximum heigh o he insrumen panel will be 1.5m rom he ground.
+
+Teams can do he sub-missions in any desired order. Poins will be awarded or compleng
+each sub-mission successully.
+
+
+3.5 PROJECT IMPLEMENTATION AND MANAGEMENT ASSESSMENT (PIMA)
+
+The objecve o he PIMA is he assessmen and review o he projec and nal rover design.
+PIMA will have one-o-one ineracon beween he eams and he judges. The eams will have
+o give a presenaon o he judges abou heir rover developmen. This presenaon will
+cover he lessons learned during he whole lie cycle o developing a rover. I will include
+mosly sysem engineering and managemen aspecs o he projec, rom he projec plan o
+manuacuring and esng he rover. Teams may also include spin-os ha have emerged rom
+heir rover projec. Furhermore, his presenaon oers he opporuniy or he judges o ask
+some specic quesons.
+
+3.5.1 Projec Implemenaton and Managemen Assessmen Procedure
+
+• More deails abou he orma o PIMA will be provided separaely in November.
+
+3.5.2 Business and Parnership Plan (BPP)
+
+• The objecve o he BPP is o evaluae he eam’s abiliy o develop he business acumen
+  o he eam and encourage hem o build parnerships wih he indusry and academia
+  which aids hem in he developmen o heir projec.
+
+• The business plan mus relae o he specic rover and eam enered in he compeon.
+
+• Specic deails or he BPP will be provided in November.
+
+3.5.3 Rover Exhibiton
+
+• To raise awareness and generae ineres in space robocs wihin he local communiy
+  while inspiring sudens, a rover exhibion will be organised during he compeon days.
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                   23
+                 INTERNATIONAL ROVER CHALLENGE - 2026
+
+   Teams are encouraged o eecvely showcase heir rover and eam by using up o wo
+   sandee ex banners, each measuring 3 ee by 6 ee. Parcipaon in he exhibion is
+   mandaory or all eams and will accoun or a oal o 50 poins in he compeon.
+
+• The scoring or his even will be divided ino wo pars: 30 poins will be awarded based
+  on he qualiy o he banners and he rover showcase, while he remaining 20 poins will
+  be deermined by he audience, local academia, or judges.
+
+• The organisers may updae he rules a heir discreon. A revised rulebook will be
+  published i any rules are updaed. All communicaons will be sen only o he ocial email
+  address o he eam.
+
+• The deails ha are no covered in his rulebook will be shared in he orm o separae
+  guidelines and he FAQs secon on he websie.
+
+• For any query relaed o he rulebook conac us a irc@roverchallenge.org
+
+
+
+
+ WWW.ROVERCHALLENGE.ORG                                                                  24
+

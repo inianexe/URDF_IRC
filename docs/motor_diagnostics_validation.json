@@ -1,0 +1,7 @@
+{
+  "samples": 237,
+  "peak_abs_torque_nm": 3.01415,
+  "peak_motoring_mechanical_w": 21.5121,
+  "peak_braking_mechanical_w": 32.371,
+  "battery_simulated": false
+}

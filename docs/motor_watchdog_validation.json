@@ -1,0 +1,7 @@
+{
+  "moving_peak_wheel_speed_rad_s": 2.27792,
+  "after_timeout_max_wheel_speed_rad_s": 5.62744e-15,
+  "command_published_seconds": 3,
+  "no_command_seconds": 4,
+  "passed": true
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <gazebo>
+    <xacro:if value="${torque_drive_enabled}">
+      <plugin filename="librover_torque_drive.so" name="rover_simulation::TorqueDrive">
+        <wheel_radius>${p['wheel_radius']}</wheel_radius><wheel_separation>${p['wheel_track']}</wheel_separation>
+        <torque_limit>${electrical['wheel_torque_limit_nm']}</torque_limit>
+        <speed_kp>${electrical['speed_kp']}</speed_kp><speed_limit>${electrical['wheel_speed_limit_rad_s']}</speed_limit>
+        <command_timeout>${electrical['command_timeout_seconds']}</command_timeout>
+        <max_linear_velocity>${p['max_linear_velocity']}</max_linear_velocity><max_angular_velocity>${p['max_angular_velocity']}</max_angular_velocity>
+        <max_linear_acceleration>${p['max_linear_acceleration']}</max_linear_acceleration><max_angular_acceleration>${p['max_angular_acceleration']}</max_angular_acceleration>
+      </plugin>
+    </xacro:if>
+    <xacro:unless value="${torque_drive_enabled}">
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>front_left_wheel_joint</left_joint><left_joint>middle_left_wheel_joint</left_joint><left_joint>rear_left_wheel_joint</left_joint>
+      <right_joint>front_right_wheel_joint</right_joint><right_joint>middle_right_wheel_joint</right_joint><right_joint>rear_right_wheel_joint</right_joint>
+      <wheel_separation>${p['wheel_track']}</wheel_separation><wheel_radius>${p['wheel_radius']}</wheel_radius>
+      <topic>/cmd_vel</topic><odom_topic>${'/wheel_odom' if suspension_enabled else '/odom'}</odom_topic><tf_topic>${'/wheel_tf' if suspension_enabled else '/tf'}</tf_topic>
+      <frame_id>odom</frame_id><child_frame_id>base_footprint</child_frame_id><odom_publish_frequency>50</odom_publish_frequency>
+      <max_linear_velocity>${p['max_linear_velocity']}</max_linear_velocity><max_angular_velocity>${p['max_angular_velocity']}</max_angular_velocity>
+      <max_linear_acceleration>${p['max_linear_acceleration']}</max_linear_acceleration><max_angular_acceleration>${p['max_angular_acceleration']}</max_angular_acceleration>
+    </plugin>
+    </xacro:unless>
+    <xacro:if value="${suspension_enabled or torque_drive_enabled}">
+      <!-- Simulation ground truth, not encoder odometry: retain pitch/roll/Z
+           for faithful TF/RViz on terrain. Never use on physical hardware. -->
+      <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+        <odom_frame>odom</odom_frame><robot_base_frame>base_footprint</robot_base_frame>
+        <odom_topic>/odom</odom_topic><tf_topic>/tf</tf_topic>
+        <dimensions>3</dimensions><odom_publish_frequency>50</odom_publish_frequency>
+      </plugin>
+    </xacro:if>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"><topic>/joint_states</topic></plugin>
+  </gazebo>
+  <xacro:if value="$(arg lidar_enabled)">
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="gpu_lidar">
+      <topic>/scan</topic><gz_frame_id>lidar_link</gz_frame_id><update_rate>10</update_rate><always_on>true</always_on>
+      <lidar><scan><horizontal><samples>720</samples><resolution>1</resolution><min_angle>-${pi}</min_angle><max_angle>${pi}</max_angle></horizontal></scan>
+        <range><min>0.15</min><max>20</max><resolution>0.01</resolution></range>
+        <noise><type>gaussian</type><mean>0</mean><stddev>0.01</stddev></noise>
+      </lidar>
+    </sensor>
+  </gazebo>
+  </xacro:if>
+  <gazebo reference="imu_link">
+    <sensor name="imu" type="imu"><topic>/imu/data</topic><gz_frame_id>imu_link</gz_frame_id><update_rate>100</update_rate><always_on>true</always_on></sensor>
+  </gazebo>
+</robot>

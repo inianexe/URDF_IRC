@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="irc_rover">
+  <xacro:arg name="physical_config" default="$(find rover_description)/config/physical.yaml"/>
+  <xacro:arg name="simulation" default="false"/>
+  <xacro:arg name="lidar_enabled" default="true"/>
+  <xacro:arg name="torque_drive" default="true"/>
+  <xacro:property name="torque_drive_enabled" value="$(arg torque_drive)"/>
+  <xacro:property name="electrical" value="${xacro.load_yaml('$(find rover_description)/config/electrical.yaml')}"/>
+  <xacro:property name="wheel_physics" value="${xacro.load_yaml('$(find rover_description)/config/wheel_inertia.yaml')}"/>
+  <xacro:arg name="articulated_arm" default="false"/>
+  <xacro:arg name="suspension" default="true"/>
+  <xacro:property name="suspension_enabled" value="$(arg suspension)"/>
+  <xacro:property name="s" value="${xacro.load_yaml('$(find rover_description)/config/suspension.yaml')}"/>
+  <xacro:property name="suspension_mass" value="${2*(s['links']['right_rocker']['mass']+s['links']['right_bogie']['mass']) if suspension_enabled else 0}"/>
+  <xacro:property name="arm_enabled" value="$(arg articulated_arm)"/>
+  <xacro:property name="p" value="${xacro.load_yaml('$(arg physical_config)')}"/>
+  <xacro:property name="modeled_wheel_mass" value="${s['wheel_mass'] if suspension_enabled else p['wheel_mass']}"/>
+  <xacro:property name="sensor_mass" value="${p['lidar_mass'] + p['imu_mass']}"/>
+  <xacro:property name="base_mass" value="${p['rover_without_arm_mass'] - suspension_mass - 6*modeled_wheel_mass - sensor_mass}"/>
+  <material name="chassis_grey"><color rgba="0.55 0.58 0.62 1"/></material>
+  <material name="tire_dark"><color rgba="0.12 0.13 0.14 1"/></material>
+  <material name="sensor_blue"><color rgba="0.1 0.35 0.8 1"/></material>
+  <material name="safety_red"><color rgba="0.85 0.02 0.02 1"/></material>
+
+  <xacro:macro name="box_inertia" params="mass x y z xyz">
+    <inertial>
+      <origin xyz="${xyz}"/>
+      <mass value="${mass}"/>
+      <inertia ixx="${mass*(y*y+z*z)/12}" ixy="0" ixz="0"
+               iyy="${mass*(x*x+z*z)/12}" iyz="0" izz="${mass*(x*x+y*y)/12}"/>
+    </inertial>
+  </xacro:macro>
+
+  <!-- Ground projection; odom->base_footprint comes from the drive/estimator. -->
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/><child link="base_link"/>
+    <origin xyz="0 0 ${p['wheel_radius']}"/>
+  </joint>
+  <link name="base_link">
+    <visual><geometry><mesh filename="package://rover_description/meshes/${('chassis_without_arm' if arm_enabled else 'chassis') + ('_suspended' if suspension_enabled else '')}.stl"/></geometry><material name="chassis_grey"/></visual>
+    <!-- Total without arm is fixed at rover_without_arm_mass. Wheel,
+         suspension and sensor link masses are deducted exactly once here. -->
+    <xacro:box_inertia mass="${base_mass}" x="${p['inertia_length']}" y="${p['inertia_width']}" z="${p['inertia_height']}"
+                      xyz="${p['chassis_com_x']} ${p['chassis_com_y']} ${p['chassis_com_z']}"/>
+    <!-- Simplified chassis/suspension envelope and upper equipment envelope. -->
+    <collision name="lower_chassis"><origin xyz="0 0 0.25"/><geometry><box size="0.60 0.62 0.25"/></geometry></collision>
+    <xacro:unless value="${arm_enabled}">
+      <collision name="upper_equipment"><origin xyz="0 0 0.64"/><geometry><box size="1.31 0.80 0.46"/></geometry></collision>
+    </xacro:unless>
+  </link>
+
+  <!-- Visible simulation representation of the required external kill switch.
+       On hardware this must be an accessible, latching device that physically
+       withdraws battery power; the ROS safety topic is not a substitute. -->
+  <link name="kill_switch_link">
+    <visual><origin rpy="0 ${pi/2} 0"/><geometry><cylinder radius="0.035" length="0.045"/></geometry><material name="safety_red"/></visual>
+  </link>
+  <joint name="kill_switch_joint" type="fixed">
+    <parent link="base_link"/><child link="kill_switch_link"/>
+    <origin xyz="-0.48 -0.34 0.48"/>
+  </joint>
+
+  <xacro:macro name="wheel" params="position side x sign parent:='base_link' y:=0 z:=0 mass:=${p['wheel_mass']}">
+    <xacro:property name="name" value="${position}_${side}_wheel"/>
+    <xacro:property name="m" value="${mass}"/>
+    <xacro:property name="r" value="${p['wheel_radius']}"/>
+    <xacro:property name="w" value="${p['wheel_width']}"/>
+    <xacro:property name="wi" value="${wheel_physics['inertia']}"/>
+    <xacro:property name="mass_scale" value="${m/wheel_physics['reference_mass']}"/>
+    <link name="${name}_link">
+      <visual><geometry><mesh filename="package://rover_description/meshes/${name}.stl"/></geometry><material name="tire_dark"/></visual>
+      <collision><origin rpy="${pi/2} 0 0"/><geometry><cylinder radius="${r}" length="${w}"/></geometry></collision>
+      <inertial><mass value="${m}"/>
+        <!-- Honeycomb CAD voids affect inertia. Contact stays a rigid cylinder;
+             no claim of elastic honeycomb deformation is made. -->
+        <inertia ixx="${wi[0]*mass_scale}" ixy="${wi[1]*mass_scale}" ixz="${wi[2]*mass_scale}"
+                 iyy="${wi[3]*mass_scale}" iyz="${wi[4]*mass_scale}" izz="${wi[5]*mass_scale}"/>
+      </inertial>
+    </link>
+    <joint name="${name}_joint" type="continuous">
+      <parent link="${parent}"/><child link="${name}_link"/>
+      <origin xyz="${x} ${sign*p['wheel_track']/2 if parent == 'base_link' else y} ${z}"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="${electrical['wheel_torque_limit_nm'] if torque_drive_enabled else p['joint_effort']}" velocity="${electrical['wheel_speed_limit_rad_s']}"/>
+      <dynamics damping="${p['joint_damping']}" friction="${p['joint_friction']}"/>
+    </joint>
+    <gazebo reference="${name}_link"><mu1>${p['contact_mu']}</mu1><mu2>${p['contact_mu2']}</mu2></gazebo>
+  </xacro:macro>
+  <xacro:unless value="${suspension_enabled}">
+  <xacro:wheel position="front" side="left" x="${p['axle_spacing']}" sign="1"/>
+  <xacro:wheel position="middle" side="left" x="0" sign="1"/>
+  <xacro:wheel position="rear" side="left" x="${-p['axle_spacing']}" sign="1"/>
+  <xacro:wheel position="front" side="right" x="${p['axle_spacing']}" sign="-1"/>
+  <xacro:wheel position="middle" side="right" x="0" sign="-1"/>
+  <xacro:wheel position="rear" side="right" x="${-p['axle_spacing']}" sign="-1"/>
+  </xacro:unless>
+  <xacro:if value="${suspension_enabled}"><xacro:include filename="$(find rover_description)/urdf/suspension.xacro"/></xacro:if>
+
+  <link name="lidar_link">
+    <visual><geometry><cylinder radius="0.045" length="0.06"/></geometry><material name="sensor_blue"/></visual>
+    <collision><geometry><cylinder radius="0.045" length="0.06"/></geometry></collision>
+    <xacro:box_inertia mass="${p['lidar_mass']}" x="0.09" y="0.09" z="0.06" xyz="0 0 0"/>
+  </link>
+  <joint name="lidar_joint" type="fixed"><parent link="base_link"/><child link="lidar_link"/>
+    <origin xyz="${p['lidar_x']} ${p['lidar_y']} ${p['lidar_z'] + (0.25 if arm_enabled else 0)}"/>
+  </joint>
+  <link name="imu_link"><xacro:box_inertia mass="${p['imu_mass']}" x="0.03" y="0.03" z="0.01" xyz="0 0 0"/></link>
+  <joint name="imu_joint" type="fixed"><parent link="base_link"/><child link="imu_link"/>
+    <origin xyz="${p['imu_x']} ${p['imu_y']} ${p['imu_z']}"/>
+  </joint>
+  <xacro:if value="${arm_enabled}"><xacro:include filename="$(find rover_description)/urdf/arm.xacro"/></xacro:if>
+  <xacro:if value="$(arg simulation)"><xacro:include filename="$(find rover_description)/urdf/gazebo.xacro"/></xacro:if>
+</robot>
